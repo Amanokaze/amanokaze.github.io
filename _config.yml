@@ -19,9 +19,28 @@ navigation:
   - title: Contact
     url: /contact
 
+comments:
+  provider : "onikaze"
+  discus:
+    shortname : "amanokaze-github-io"    
+
 social:
   github: amanokaze
   facebook: oniamano
   email: oniamano@gmail.com
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true  
 
 google_analytics: "UA-85642571-4"
