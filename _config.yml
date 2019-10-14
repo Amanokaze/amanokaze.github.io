@@ -43,4 +43,12 @@ defaults:
       share: true
       related: true      
 
+plugins:
+  - jekyll-polyglot
+
+languages: ['ko','en']
+default_lang: 'ko'
+exclude_from_localization: ['javascript','images','css']
+parallel_localization: false
+
 google_analytics: "UA-85642571-4"
