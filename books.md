@@ -4,7 +4,7 @@ title: Books
 ---
 
  <h1 class="pageTitle">Books</h1>
-<div>
+<div class="book">
 	<div class="bookImage">
 		<img src="/assets/img/books1.jpg" />
 	</div>
