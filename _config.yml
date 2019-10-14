@@ -22,7 +22,7 @@ navigation:
 comments:
   provider : "onikaze"
   discus:
-    shortname : "amanokaze-github-io"    
+    shortname : "onikaze"    
 
 social:
   github: amanokaze
