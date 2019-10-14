@@ -20,7 +20,7 @@ navigation:
     url: /contact
 
 comments:
-  provider : "onikaze"
+  provider : "disqus"
   disqus:
     shortname : "onikaze"    
 
