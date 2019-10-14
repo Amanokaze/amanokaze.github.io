@@ -21,7 +21,7 @@ navigation:
 
 comments:
   provider : "onikaze"
-  discus:
+  disqus:
     shortname : "onikaze"    
 
 social:
