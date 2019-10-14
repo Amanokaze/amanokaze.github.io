@@ -14,11 +14,11 @@ title: Books
 	<p>구입: <a href="//www.yes24.com/Product/Goods/78572342?scode=032&OzSrank=3">Yes24</a> / <a href="//www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788960882720&orderClick=LAG&Kc=">교보문고</a>
 	/ <a href="//book.interpark.com/product/BookDisplay.do?_method=detail&sc.shopNo=0000400000&sc.prdNo=316045261&sc.saNo=003002001&bid1=search&bid2=product&bid3=title&bid4=001">Interpark</a><br />
 	문의: <a href="mailto:oniamano@gmail.com">oniamano@gmail.com</a> or <a href="contact">Contact Page</a><br />
-	Current Edition: 1판1쇄</p><br />
+	Current Edition: 1판1쇄<br />
 	Source Code: <a href="//www.github.com/amanokaze/awsdjango-books">Github</a></p>
 	</div>
 </div>
-
+<h3>&nbsp;</h3>
 <h3>집필 수정사항</h3>
 <p>현재 1판1쇄가 판매 중인 관계로 보강 및 수정해야 할 내용이 다수 있습니다. 아래 Post를 통해서 참고하시기 바랍니다.</p>
 <ul>
