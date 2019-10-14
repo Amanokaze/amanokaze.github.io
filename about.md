@@ -21,7 +21,7 @@ title: About Onik Lab.
 	</ul>
 	<h2>Development</h2>
 	<ul>
-		<li><a href="https://www.github.com/amanokaze/gcloud_django_deploy/">GAE & Cloud Storage를 연동한 Django 다중파일 첨부</a></li>
+		<li><a href="https://www.github.com/amanokaze/gcloud_django_deploy/">GAE(Google App Engine) & Cloud Storage를 연동한 Django 다중파일 첨부</a></li>
 	</ul>
 	<h2>Education</h2>
 	<ul>
