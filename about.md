@@ -11,9 +11,8 @@ title: About Onik Lab.
 	<h2>Research</h2>
 	<ul>
 		<li>AWS/Google Cloud & Django Web Application</li>
+  		<li>Machine Learning / Deep Learning</li>
   		<li>Restful Web Application </li>
-  		<li>Machine Learning Example & Theory</li>
-  		<li>Optical Character Recognition(OCR) using Deep Learning</li>
 	</ul>
 	<h2>Books</h2>
 	<ul>
@@ -22,9 +21,5 @@ title: About Onik Lab.
 	<h2>Development</h2>
 	<ul>
 		<li><a href="https://www.github.com/amanokaze/gcloud_django_deploy/">GAE & Cloud Storage를 연동한 Django 다중파일 첨부</a></li>
-	</ul>
-	<h2>Education</h2>
-	<ul>
-		<li>Basic Python Programming(예정)</li>
 	</ul>
 </div>
