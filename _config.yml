@@ -19,7 +19,7 @@ navigation:
   - title: Contact
     url: /contact
   - title: Books
-     url: /books
+    url: /books
 
 comments:
   provider : "disqus"
