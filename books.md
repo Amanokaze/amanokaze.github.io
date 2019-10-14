@@ -9,11 +9,11 @@ title: Your New Jekyll Site
 		<img src="assets/img/books1.jpg" />
 	</div>
 	<div id="contactContent">
-	<p class="intro">AWS Å¬¶ó¿ìµå ±â¹İÀÇ Django À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼Ç</p>
-	<p>AWS È¯°æ¿¡¼­ Django À¥ ¾ÖÇÃ¸®ÄÉÀÌ¼Ç °³¹ßÀ» ´Ù·é Á¾ÇÕ ¼­ÀûÀÔ´Ï´Ù.</p>
-	<p><a href="//www.yes24.com/Product/Goods/78572342?scode=032&OzSrank=3">Yes24</a> / <a href="//www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788960882720&orderClick=LAG&Kc=>±³º¸¹®°í</a>
+	<p class="intro">AWS í´ë¼ìš°ë“œ ê¸°ë°˜ì˜ Django ì›¹ ì• í”Œë¦¬ì¼€ì´ì…˜</p>
+	<p>AWS í™˜ê²½ì—ì„œ Django ì›¹ ì• í”Œë¦¬ì¼€ì´ì…˜ ê°œë°œì„ ë‹¤ë£¬ ì¢…í•© ì„œì ì…ë‹ˆë‹¤.</p>
+	<p><a href="//www.yes24.com/Product/Goods/78572342?scode=032&OzSrank=3">Yes24</a> / <a href="//www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788960882720&orderClick=LAG&Kc=>êµë³´ë¬¸ê³ </a>
 	/ <a href="//book.interpark.com/product/BookDisplay.do?_method=detail&sc.shopNo=0000400000&sc.prdNo=316045261&sc.saNo=003002001&bid1=search&bid2=product&bid3=title&bid4=001">Interpark</a></p>
 	<p>Part 3 - Source Code: <a href="//www.github.com/amanokaze/awsdjango-books">Github</a></p>
-	<p>¹®ÀÇ: oniamano@gmail.com or <a href="contact">Contact Page</a></p>
+	<p>ë¬¸ì˜: oniamano@gmail.com or <a href="contact">Contact Page</a></p>
 	</div>
 </div>
