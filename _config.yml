@@ -1,5 +1,5 @@
-title: Long Haul
-description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
+title: Onik Lab.
+description: Various IT-based research space, django, cloud, machine learning, and so on.
 
 url: http://amanokaze.github.io
 baseurl: ""
@@ -24,4 +24,4 @@ social:
   facebook: oniamano
   email: oniamano@gmail.com
 
-google_analytics: "UA-58263416-1"
+google_analytics: "UA-85642571-4"
