@@ -9,7 +9,7 @@ title: Onik Lab.
     {% for post in paginator.posts %}
       <li>
         <span class="date">{{ post.date | date: '%B %d, %Y' }}
-          • <a href="https://amanokaze.github.io{{ post.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}"> Comments</a>
+          • <a href="https://amanokaze.github.io{{ post.url }}#disqus_thread">0 Comments</a>
         </span>
         <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
         <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt | strip_html }}{% endif %}</p>
