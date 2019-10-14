@@ -4,11 +4,11 @@ title: Contact Onik Lab.
 ---
 
 <div id="contact">
-  <h1 class="pageTitle">Contact Me</h1>
+  <h1 class="pageTitle">Contact</h1>
   <div class="contactContent">
-    <p class="intro">This is an example Contact page. If you want to make changes then do so in the <code>contact.html</code> file.</p>
-    <p>The form is provided by <a href="http://formspree.io/">Formspree.</a> Follow the directions on their site to set up the form for use.</p>
-    <p>If you have questions about the theme feel free to <a href="mailto:oniamano@gmail.com">email me</a> or create an issue on <a href="https://github.com/amanokaze/awsdjango-books">GitHub</a>. Enjoy!</p>
+    <p>Onik Lab에서는 현재 Django, Google Cloud, Machine Learning 및 Deep Learning에 관한 연구가 진행중이고, Python 프로그래밍 교육 자료 및 Django와 관련된 서적도 출간하여 다양한 교육 자료도 제작 및 제공하고 있습니다. </p>
+    <p>위와 관련하여 궁금하신 점이 있으면 언제든지 oniamano@gmail.com 으로 연락 주시며, 오른쪽 양식으로도 바로 메일을 보낼 수 있습니다.</p>
+    <p>여러분들의 의견을 언제나 환영합니다.</p>
   </div>
   <form action="https://formspree.io/oniamano@gmail.com" method="POST">
     <label for="name">Name</label>
