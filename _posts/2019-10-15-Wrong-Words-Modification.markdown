@@ -7,7 +7,7 @@ date:   2019-10-15
 <ul>
 	<li>11P: 사물인터넷(Internet of Thins) → 사물인터넷(Internet of Things)</li>
 	<li>137P: 맨 위의 코드의 두 번쨰 둘이 다음 줄로 이동되지 않았습니다. 다음 구문이 맞습니다.</li>
-```Shell
+``` Shell
 	$ cat .profile
 	$ source ~/.profile
 	$ virtualenv --verision

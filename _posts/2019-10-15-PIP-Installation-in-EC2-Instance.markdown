@@ -32,9 +32,9 @@ virtualenv ve
 
 <p>그리고 138p의 가상환경 들어가는 부분의 코드는 </p>
 
-{% highlight python3 %}
+```Python
 source ve/bin/activate
-{% endhighlight %}
+```
  
 
 <p>위 코드이며, 설명까지도 자세히 되어 있었는데, 책에서는 'source'가 빠진 채로 've/bin/activate'로만 입력되어 있었습니다. 해당 부분에 대해서는 더불어 양해 바라겠습니다.</p>

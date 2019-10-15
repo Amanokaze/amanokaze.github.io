@@ -9,7 +9,7 @@ AWS 클라우드 기반 Django 웹 애플리케이션 서적의 Part 3 웹 애�
  
 이 부분은 현재 1판으로 나온 책의 291페이지의
 
-### Chapter 16. 웹 애플리케이션 환경 설정 - 001. Django 환경 설정 - 2. DB 생성 및 테이블 구성
+#### Chapter 16. 웹 애플리케이션 환경 설정 - 001. Django 환경 설정 - 2. DB 생성 및 테이블 구성
 
 파트의 뒤에 들어갈 예정이며, 들어갈 부분은 '<font color="#FF0000">3. 설정 데이터 구성</a>' 이라는 주제로 하겠습니다.
 이 파트는 책의 일부에 추가로 넣어야 하는 부분인 관계로, 책을 집필할 때 썼던 문체로 작성하겠습니다.
@@ -17,9 +17,9 @@ AWS 클라우드 기반 Django 웹 애플리케이션 서적의 Part 3 웹 애�
  
 <hr/>
 
-##3. 설정 데이터 구성
+#### 3. 설정 데이터 구성
 
-###1) 설정 데이터 개요
+##### 1) 설정 데이터 개요
  
 
 일반적으로 회원정보 및 게시판 데이터는 웹페이지에서 사용자로부터 입력을 받아서 데이터를 저장하고 관리하도록 되어 있다. 하지만 일부 데이터의 경우에는 환경 설정 시 미리 입력해야 하는 경우도 있다. 이 책에서는 이러한 데이터를 '설정 데이터'라 하며, 이를 구성한다. 
@@ -30,7 +30,7 @@ AWS 클라우드 기반 Django 웹 애플리케이션 서적의 Part 3 웹 애�
 
  
 
-###2) 게시판 카테고리 데이터 입력
+##### 2) 게시판 카테고리 데이터 입력
  
 
 Chapter 15의 259P 웹페이지 설계 부분을 보면, 웹페이지 설계 시 고려사항으로 기본 메뉴를 소개, 공지사항, 자유게시판, 대화형 게시판, 로그인/회원가입 등으로 구성하도록 되어 있다. 여기에서 소개 페이지는 게시판이 아닌 반면, 공지사항, 자유게시판, 대화형 게시판은 게시판 메뉴이므로, 게시판 카테고리 역시 이를 감안하여 각각의 데이터를 입력한다.
@@ -46,14 +46,14 @@ Chapter 15의 259P 웹페이지 설계 부분을 보면, 웹페이지 설계 시
 
 위 표를 토대로 DB 인스턴스에 데이터를 삽입하는 구문은 다음과 같다.
 
- ```SQL
+``` SQL
 insert into board_categories (category_type, category_code, category_name, category_desc, list_count, authority)
  values ('normal', 'notice', '공지사항', '홈페이지의 주요 사항을 알리는 공간입니다.', 20, 1);
 insert into board_categories (category_type, category_code, category_name, category_desc, list_count, authority)
  values ('normal', 'free', '자유게시판', '원하는 주제의 글을 자유롭게 올릴 수 있는 공간입니다.', 10, 0);
 insert into board_categories (category_type, category_code, category_name, category_desc, list_count, authority)
  values ('communication', 'comm', '대화형 게시판', 'SNS와 유사한 형태로 실시간으로 글을 올리는 공간입니다.', 5, 0);
- ```
+```
 
 생성된 데이터는 다음 [그림] 과 같이 나타난다.
 
