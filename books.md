@@ -24,7 +24,7 @@ title: Books
 <p>현재 1판1쇄가 판매 중인 관계로 보강 및 수정해야 할 내용이 다수 있습니다. 아래 Post를 통해서 참고하시기 바랍니다.</p>
 <ul>
 	<li><a href="/blog/오타-수정-예정-안내/">오타 수정 예정 안내</a></li>
-	<li>DB Instacne 연결을 위한 보안 설정</li>
+	<li>DB Instance 연결을 위한 보안 설정</li>
 	<li>Virtualenv 가상환경 생성</li>
 	<li>Part 3 - 설정 데이터 구성: Category 데이터 Insert</li>
 	<li>AWS Elastic Beanstalk에서 HTTPS 사용하기</li>
