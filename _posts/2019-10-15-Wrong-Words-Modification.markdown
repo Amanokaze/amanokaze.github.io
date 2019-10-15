@@ -18,3 +18,8 @@ date:   2019-10-15
 	<li>245P: testapp/templates/boardsfunctionview.html → testapp/templates/boards_list_fbv.html</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 </ul>
+``` Shell
+	$ cat .profile
+	$ source ~/.profile
+	$ virtualenv --verision
+```
