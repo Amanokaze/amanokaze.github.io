@@ -24,9 +24,9 @@ date:   2019-10-15
 <p>가상환경 생성은 위 3번의 내용대로 'virtualenv [가상환경명]'의 형태로 입력하면 가상환경이 생성되며,
 생성된 가상환경은 아래와 같이 나타납니다.</p>
 
-{% highlight python3 %}
+``` Python3
 virtualenv ve
-{% endhighlight %}
+```
 
 <img src='/assets/img/img002_01.png' />
 
