@@ -47,49 +47,49 @@ ACM이라 함은 AWS Certificate Manager의 줄임말로, AWS의 인증서 관�
 
 ACM을 사용하기 위해서는 서비스에 그냥 'acm'이라고 검색하면 'Certificate Manager'가 팝업으로 뜹니다. 그 곳으로 들어가면 됩니다.
 
-![Certificate Manager]('/assets/img/img004_01.png')
+![Certificate Manager](/assets/img/img004_01.png)
 
 시작하기가 2개가 있을 겁니다. 첫번째 '인증서 프로비저닝'을 선택합니다.
 
-![Authenticate Provisioning]('/assets/img/img004_02.png')
+![Authenticate Provisioning](/assets/img/img004_02.png)
 
 인증서 요청은 공인, 사설 인증서가 있으며, 공인인증서를 선택합니다.
 
-![Authenticate Request]('/assets/img/img004_03.png')
+![Authenticate Request](/assets/img/img004_03.png)
 
 이제 도메인 이름을 추가합니다.
 
-![Add a domain name]('/assets/img/img004_04.png')
+![Add a domain name](/assets/img/img004_04.png)
 
 
 저는 이미 도메인을 보유하고 있으므로, 보유하고 있는 도메인을 입력합니다.
 
 여기서 이름 입력할 때에는 도메인 이름 앞에 '*' 기호를 넣어 줘야, 여러 호스트의 도메인을 모두 사용할 수 있습니다.
 
-![Add a domain name - asterisk]('/assets/img/img004_05.png')
+![Add a domain name - asterisk](/assets/img/img004_05.png)
 
 
 그리고 하나 더 추가해야 합니다.
 
 앞서 *.awsdjangoboard.com 을 사용했지만, 이 이름은 awsdjangoboard.com, 즉 호스트가 없는 도메인은 포함하지 않기 때문에,  호스트가 없는 도메인에 대해서도 추가를 해야 합니다.
 
-![Add a domain name - none]('/assets/img/img004_0106.png')
+![Add a domain name - none](/assets/img/img004_0106.png)
 
 다음은 검증 절차입니다. 입력한 도메인이 본인이 소유하고 있는 도메인인지를 검증해야 되겠죠.
 
 검증 방법은 DNS 검증과 e-mail 검증이 있는데, DNS 검증은 DNS 구성 수정 권한이 있을 때 검증하는 방식이고, e-mail  검증은 도메인 등록 시 사용했던 e-mail을 사용하는 방법입니다. Route 53에서 도메인을 관리하고 있다면 DNS 검증을 권장합니다.
 
-![Verification Method]('/assets/img/img004_07.png')
+![Verification Method](/assets/img/img004_07.png)
 
 이제 입력된 내용을 확인합니다. 이상이 없으면 '확인 및 요청'을 눌러서 진행합니다.
 
-![Next Step]('/assets/img/img004_08.png')
+![Next Step](/assets/img/img004_08.png)
 
 이제 요청 진행 중입니다.
 
 검증 보류라고 한 이유는 간단합니다. DNS 검증을 하겠다고 했지, 실제 검증한 것이 아니기 때문에 검증이 완료된 것이 아니므로 보류라고 나타난 것입니다. 이제 실제 검증을 위해서 계속 진행합니다.
 
-![Verification Next Step]('/assets/img/img004_09.png')
+![Verification Next Step](/assets/img/img004_09.png)
 
 다음 화면으로 이동한 다음에 도메인을 확인하면, 아직 검증 미완료 상태가 유지된 채로 나옵니다.
 
@@ -97,23 +97,23 @@ ACM을 사용하기 위해서는 서비스에 그냥 'acm'이라고 검색하면
 
 파란색 'Route 53에서 레코드 생성'을 눌러줍니다.
 
-![Add a record set]('/assets/img/img004_10.png')
+![Add a record set](/assets/img/img004_10.png)
 
 그러면 다음과 같은 화면이 나오면서 '생성'을 누르면 바로 추가할 수 있습니다.
 
-![Create a record set]('/assets/img/img004_11.png')
+![Create a record set](/assets/img/img004_11.png)
 
 이제 DNS 검증 준비는 모두 완료되었습니다. 실제 검증이 완료되기까지는 시간이 조금 걸리므로 기다려야 합니다.
 
-![Wait a record set]('/assets/img/img004_12.png')
+![Wait a record set](/assets/img/img004_12.png)
 
 한 3분~5분 정도 지나면 검증이 완료되었다고 하면서 내용을 자동으로 갱신해서 보여줍니다. 
 
-![Verification Completed]('/assets/img/img004_13.png')
+![Verification Completed](/assets/img/img004_13.png)
 
 Route 53을 이동해도 정상적으로 등록된 것을 확인할 수 있으니 더불어 참고 바랍니다.
 
-![Route 53]('/assets/img/img004_14.png')
+![Route 53](/assets/img/img004_14.png)
 
  
 
@@ -121,19 +121,19 @@ Route 53을 이동해도 정상적으로 등록된 것을 확인할 수 있으�
 
 이제 Elastic Beanstalk로 이동합니다. 
 
-![Elastic Beanstalk]('/assets/img/img004_15.png')
+![Elastic Beanstalk](/assets/img/img004_15.png)
 
 애플리케이션을 선택한 후, 좌측의 '구성'으로 들어갑니다.
 
-![EB Configuration]('/assets/img/img004_16.png')
+![EB Configuration](/assets/img/img004_16.png)
 
 아래로 조금만 내리면 '로드 밸런서'가 있습니다. 로드밸런서의 '수정'을 눌러서 진행합니다.
 
-![LB Modification]('/assets/img/img004_17.png')
+![LB Modification](/assets/img/img004_17.png)
 
 첫 화면에서 아마 기본 HTTP 포트인 80만 등록되어 있을 것입니다. '리스너 추가'를 눌러서 추가를 진행해 줍니다.
 
-![Add a LB Listener]('/assets/img/img004_18.png')
+![Add a LB Listener](/assets/img/img004_18.png)
 
 추가 사항은 아래와 같이 입력해 줍니다. 
 
@@ -143,27 +143,27 @@ Route 53을 이동해도 정상적으로 등록된 것을 확인할 수 있으�
 
 그리고 아래 SSL 인증서를 위에서 생성했던 ACM 인증서를 선택합니다. ACM 인증서를 발급했던 이유도 Elastic Beanstalk에서 HTTPS 추가 시 인증서를 선택하기 위한 사전 작업으로 보시면 됩니다.
 
-![Class Load Balancer Listener]('/assets/img/img004_19.png')
+![Class Load Balancer Listener](/assets/img/img004_19.png)
 
 이제 거의 다 왔습니다. '생성 대기중'으로 표시된 것을 확인할 수 있습니다. 이제 적용하러 아래로 스크롤합니다.
 
-![LB 443]('/assets/img/img004_20.png')
+![LB 443](/assets/img/img004_20.png)
 
 우측 하단의 '적용'을 눌러서 적용시켜줍니다.
 
-![LB Mod Completed]('/assets/img/img004_21.png')
+![LB Mod Completed](/assets/img/img004_21.png)
 
 이제 Elastic Beanstalk 애플리케이션을 다시 실행합니다. 재실행하는 데 평균 1~3분이 걸리니 기다려야 되겠죠.
 
-![EB Dashboard]('/assets/img/img004_22.png')
+![EB Dashboard](/assets/img/img004_22.png)
 
 적용이 완료되었네요. HTTPS를 넣어서 'https://www.awsdjangoboard.com'을 실행해 보겠습니다.
 
-![Enter a site]('/assets/img/img004_23.png')
+![Enter a site](/assets/img/img004_23.png)
 
 정상적으로 HTTPS로도 웹사이트가 열린 것을 확인할 수 있습니다.
 
-![Completed]('/assets/img/img004_24.png')
+![Completed](/assets/img/img004_24.png)
 
  
 

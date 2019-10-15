@@ -3,43 +3,39 @@ layout: post
 title:  "DB Instance 연결을 위한 보안 설정"
 date:   2019-10-15
 ---
-미편집
-<p>안녕하세요.</p>
 
-<p>AWS / Django 웹 애플리케이션 개발 관련하여 책에서 설명이 부족했던 부분을 알려드리기 위해서 글을 쓰니 참고하시기 바랍니다. 이 부분도 추후에 2쇄가 발행된다면 반영토록 하겠습니다.</p>
+안녕하세요.
 
-<p>책 134~138p를 보면, virtualenv 가상환경을 생성하는 부분이 있습니다.</p>
+Python 및 PIP 설치와 관련해서 참고로 알려드릴 사항이 있어서 글을 써봅니다.
+제가 집필한 책에서도 그렇고, 일반적으로는 Python3를 설치하면 pip3도 설치할 수 있습니다.
 
-<p>가상환경 생성 순서는</p>
-
-1. pip3로 virtualenv를 설치한다.
-2. virtualenv --version 으로 버전을 확인한다.
-3. virtualenv [가상환경명] 을 입력하여 신규 가상환경을 생성한다.
-4. source [가상환경명]/bin/activate 를 실행하여 가상환경으로 들어간다.
-
-<p>이 순서로 구성되어 있는데, 놀랍게도 3번부분이 빠져있었고, 4번 부분 예제 코드가 잘못 기재가 되어 있었습니다.</p>
-
-<p>해당 사항에 대해서는 다시 한번 양해를 부탁드리겠습니다.</p>
-
-<p>가상환경 생성은 위 3번의 내용대로 'virtualenv [가상환경명]'의 형태로 입력하면 가상환경이 생성되며,
-생성된 가상환경은 아래와 같이 나타납니다.</p>
-
-``` Python3
-virtualenv ve
+``` Shell
+$ sudo apt install python3
+$ sudo apt install python3-pip
 ```
 
-<img src='/assets/img/img002_01.png' />
+하지만, AWS에서 제공하는 EC2 인스턴스 중 일부 운영체제의 버전에서는 python3 설치는 정상적으로 되나, pip3가 설치되지 않는 경우가 발생하는 것으로 확인되었습니다.
 
-<p>그리고 138p의 가상환경 들어가는 부분의 코드는 </p>
+![PIP Error](/assets/img/img005_01.png')
 
-```Python
-source ve/bin/activate
+
+위와 같이 'Unable to locate package python3-pip'가 나오면서 설치가 되지 않을 수도 있습니다.
+
+하지만 해결방법은 의외로 간단하니 참고바랍니다.
+
+python3를 설치한 후, APT 패키지 관리자를 업데이트-업그레이드를 해주시기 바랍니다.
+
+``` Shell
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install python3-pip
 ```
- 
 
-<p>위 코드이며, 설명까지도 자세히 되어 있었는데, 책에서는 'source'가 빠진 채로 've/bin/activate'로만 입력되어 있었습니다. 해당 부분에 대해서는 더불어 양해 바라겠습니다.</p>
- 
+위와 같이 패키지 업그레이드까지 완료된 후, 다시 pip3를 설치하면 정상적으로 설치가 이루어집니다.
 
-<p>서적 이용에 참고하시기 바랍니다.</p>
+![PIP Completed](/assets/img/img005_02.png')
 
-<p>감사합니다.</p>
+
+Python3 및 PIP3 설치 시 참고하시기 바라겠습니다.
+
+감사합니다.
