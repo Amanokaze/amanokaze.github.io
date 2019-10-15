@@ -73,7 +73,7 @@ ACM을 사용하기 위해서는 서비스에 그냥 'acm'이라고 검색하면
 
 앞서 *.awsdjangoboard.com 을 사용했지만, 이 이름은 awsdjangoboard.com, 즉 호스트가 없는 도메인은 포함하지 않기 때문에,  호스트가 없는 도메인에 대해서도 추가를 해야 합니다.
 
-![Add a domain name - none](/assets/img/img004_0106.png)
+![Add a domain name - none](/assets/img/img004_06.png)
 
 다음은 검증 절차입니다. 입력한 도메인이 본인이 소유하고 있는 도메인인지를 검증해야 되겠죠.
 
