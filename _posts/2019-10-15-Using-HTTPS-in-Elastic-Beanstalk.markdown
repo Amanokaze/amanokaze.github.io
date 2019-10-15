@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DB Instance 연결을 위한 보안 설정"
+title:  "AWS Elastic Beanstalk에서 HTTPS 사용하기"
 date:   2019-10-15
 ---
 안녕하세요.

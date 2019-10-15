@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DB Instance 연결을 위한 보안 설정"
+title:  "EC2 인스턴스의 Django 개발환경을 웹브라우저에서 조회하는 방법"
 date:   2019-10-15
 ---
 

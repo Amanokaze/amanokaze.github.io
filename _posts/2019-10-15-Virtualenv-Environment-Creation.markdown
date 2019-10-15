@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DB Instance 연결을 위한 보안 설정"
+title:  "Virtualenv 가상환경 생성"
 date:   2019-10-15
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "DB Instance 연결을 위한 보안 설정"
+title:  "AWS EC2 인스턴스에서 PIP 설치하기"
 date:   2019-10-15
 ---
 
