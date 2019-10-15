@@ -25,7 +25,7 @@ title: Books
 <ul>
 	<li><a href="/blog/Wrong-Words-Modification/">오타 수정 예정 안내</a></li>
 	<li><a href="/blog/Security-Setting-For-DB-Instance-Connection/">DB Instance 연결을 위한 보안 설정</a></li>
-	<li><a href="/blog/Virtualenv-Enironment-Creation/">Virtualenv 가상환경 생성</a></li>
+	<li><a href="/blog/Virtualenv-Environment-Creation/">Virtualenv 가상환경 생성</a></li>
 	<li><a href="/blog/Category-Data-Insert/">Category 데이터 Insert</a></li>
 	<li><a href="/blog/Using-HTTPS-in-Elastic-Beanstalk/">AWS Elastic Beanstalk에서 HTTPS 사용하기</a></li>
 	<li><a href="/blog/PIP-Installation-in-EC2-Instance/">AWS EC2 인스턴스에서 PIP 설치하기</a></li>
