@@ -23,8 +23,6 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <title>{{ page.title }}</title>
 
-    {% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}
-
     <!-- Open Graph Meta -->
     <meta content="{{ site.title }}" property="og:site_name">
     {% if page.title %}
