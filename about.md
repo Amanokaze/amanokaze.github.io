@@ -17,7 +17,7 @@ title: About Onik Lab.
 	</ul>
 	<h2>Books</h2>
 	<ul>
-		<li><a href='books/'>AWS 클라우드 기반의 Django 웹 애플리케이션</a></li>
+		<li><a href='/books/'>AWS 클라우드 기반의 Django 웹 애플리케이션</a></li>
 	</ul>
 	<h2>Development</h2>
 	<ul>

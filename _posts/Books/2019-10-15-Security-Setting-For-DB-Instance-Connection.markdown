@@ -7,7 +7,7 @@ categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, DB, Instance, Python, 파이썬 ]
 ---
 
-안녕하세요. 본 서적의 DB 인스턴스 연결과 관련하여 일부 누락된 부분이 있어서 알려드리고자 합니다.
+본 서적의 DB 인스턴스 연결과 관련하여 일부 누락된 부분이 있어서 알려드리고자 합니다.
 
 <p>먼저 AWS 클라우드 기반의 Django 웹 애플리케이션 책에 관심을 가져주신 독자분들께 다시한번 감사의 말씀을 전해드립니다.</p>
 
