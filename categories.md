@@ -23,7 +23,7 @@ title: Categories
                 <span class="date">{{ post.date | date: '%B %d, %Y' }}
                     / <a href="https://amanokaze.github.io{{ post.url }}#disqus_thread">0 Comments</a>
                 </span>
-            </h3>
+            </p>
             </li>
         {% endfor %}
         
