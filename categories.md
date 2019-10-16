@@ -31,9 +31,9 @@ title: Categories
                 <a href="{{ site.baseurl }}{{ post.url }}">
                 {{ post.title }}
                 </a>
-                <span class="date">{{ post.date | date: '%B %d, %Y' }}
+                <span class="date"><small>{{ post.date | date: '%B %d, %Y' }}
                     / <a href="https://amanokaze.github.io{{ post.url }}#disqus_thread">0 Comments</a>
-                </span>
+                </small></span>
             </p>
             </li>
         {% endfor %}
