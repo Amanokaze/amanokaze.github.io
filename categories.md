@@ -16,12 +16,12 @@ title: Categories
         
         {% for post in site.categories[category] %}
             <li>
-            <h3>
+            <p>
                 <a href="{{ site.baseurl }}{{ post.url }}">
                 {{ post.title }}
                 </a>
                 <span class="date">{{ post.date | date: '%B %d, %Y' }}
-                    • <a href="https://amanokaze.github.io{{ post.url }}#disqus_thread">0 Comments</a>
+                    / <a href="https://amanokaze.github.io{{ post.url }}#disqus_thread">0 Comments</a>
                 </span>
             </h3>
             </li>
@@ -31,5 +31,6 @@ title: Categories
 
     {% endif %}
     {% endif %}
+    <p>&nbsp;</p>
 {% endfor %}
 </div>
