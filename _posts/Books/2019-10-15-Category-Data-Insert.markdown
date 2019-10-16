@@ -3,7 +3,7 @@ layout: post
 title:  "Category 데이터 Insert"
 date:   2019-10-15
 image:  "assets/img/img003_01.png"
-categories: [Books]
+category: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, MySQL, Table, 테이블, Python, 파이썬]
 ---
 안녕하세요. AWS 클라우드 기반 Django 웹 애플리케이션 서적의 Part 3 웹 애플리케이션 개발 및 배포 관련하여 추가 입력 사항이 있어서 알려드립니다.
