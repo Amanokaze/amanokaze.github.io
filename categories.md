@@ -3,6 +3,7 @@ layout: default
 title: Categories
 ---
 
+<div id="articles">
 {% assign pages_list = site.pages %}
 {% for node in pages_list %}
     {% if node.title != null %}
@@ -28,3 +29,4 @@ title: Categories
     {% endif %}
     {% endif %}
 {% endfor %}
+</div>
