@@ -46,11 +46,11 @@ Chapter 15의 259P 웹페이지 설계 부분을 보면, 웹페이지 설계 시
 
 위 표를 토대로 DB 인스턴스에 데이터를 삽입하는 구문은 다음과 같다.
 
-``` SQL
+{% highlight SQL %}
 insert into board_categories(category_type, category_code, category_name, category_desc, list_count, authority)  values ('normal', 'notice', '공지사항', '홈페이지의 주요 사항을 알리는 공간입니다.', 20, 1);
 insert into board_categories (category_type, category_code, category_name, category_desc, list_count, authority)  values ('normal', 'free', '자유게시판', '원하는 주제의 글을 자유롭게 올릴 수 있는 공간입니다.', 10, 0);
 insert into board_categories (category_type, category_code, category_name, category_desc, list_count, authority)  values ('communication', 'comm', '대화형 게시판', 'SNS와 유사한 형태로 실시간으로 글을 올리는 공간입니다.', 5, 0);
-```
+{% endhighlight %}
 
 생성된 데이터는 다음 [그림] 과 같이 나타난다.
 
