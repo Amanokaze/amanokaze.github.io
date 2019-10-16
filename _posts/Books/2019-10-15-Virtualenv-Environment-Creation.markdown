@@ -3,6 +3,8 @@ layout: post
 title:  "Virtualenv 가상환경 생성"
 date:   2019-10-15
 image:  "assets/img/img002_01.png"
+categories: [Books]
+tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Virtualenv, venv, Python, 파이썬]
 ---
 
 안녕하세요. 이 책에서 Virtualenv 관련하여 책에서 설명이 부족했던 부분을 알려드리기 위해서 글을 쓰니 참고하시기 바랍니다.

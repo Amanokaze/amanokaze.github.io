@@ -3,6 +3,8 @@ layout: post
 title:  "AWS Elastic Beanstalk에서 HTTPS 사용하기"
 date:   2019-10-15
 image:  "assets/img/img004_01.png"
+categories: [Books]
+tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Authenticate, 인증, 인증서, HTTPS, Python, 파이썬]
 ---
 안녕하세요. 이 글은 이번 책에는 현재 없는 내용이지만, 차후 2판 인쇄를 할 때 들어갈 수도 있는 내용임을 먼저 사전에 알려드리고자 합니다.
 

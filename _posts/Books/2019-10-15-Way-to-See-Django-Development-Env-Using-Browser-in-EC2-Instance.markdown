@@ -3,6 +3,8 @@ layout: post
 title:  "EC2 인스턴스의 Django 개발환경을 웹브라우저에서 조회하는 방법"
 date:   2019-10-15
 image:  "assets/img/img006_01.png"
+categories: [Books]
+tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, 웹브라우저, 브라우저, Browser, 연결, 조회, Python, 파이썬]
 ---
 
 안녕하세요. 이번 글은 책과 관련하여 개발환경 웹페이지를 더욱 편리하게 조회하는 방법을 알려드리고자 합니다.

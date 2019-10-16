@@ -3,6 +3,8 @@ layout: post
 title:  "AWS EC2 인스턴스에서 PIP 설치하기"
 date:   2019-10-15
 image:  "assets/img/img005_01.png"
+categories: [Books]
+tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, pip, pip3, Python, 파이썬 ]
 ---
 
 안녕하세요.Python 및 PIP 설치와 관련해서 참고로 알려드릴 사항이 있어서 글을 써봅니다.
