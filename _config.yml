@@ -56,3 +56,8 @@ exclude_from_localization: ['javascript','images','css']
 parallel_localization: false
 
 google_analytics: "UA-85642571-4"
+
+gems:
+  - jekyll-sitemap
+  - jekyll-polyglot
+   

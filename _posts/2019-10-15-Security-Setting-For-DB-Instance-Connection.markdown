@@ -2,6 +2,7 @@
 layout: post
 title:  "DB Instance 연결을 위한 보안 설정"
 date:   2019-10-15
+image:  "assets/img/img001_01.png"
 ---
 
 안녕하세요. 본 서적의 DB 인스턴스 연결과 관련하여 일부 누락된 부분이 있어서 알려드리고자 합니다.

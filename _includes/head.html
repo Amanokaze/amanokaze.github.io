@@ -49,10 +49,11 @@
     {% endif %}
     {% if page.image %}
       <meta content="{{ site.url }}/assets/img/{{ page.image }}" property="og:image">
-    {% else %}
+    {% endif %}
+    {% if site.image %}
       <meta content="{{ site.url }}/assets/img/{{ site.image }}" property="og:image">
     {% endif %}
-
+    
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@{{ site.social.twitter }}">

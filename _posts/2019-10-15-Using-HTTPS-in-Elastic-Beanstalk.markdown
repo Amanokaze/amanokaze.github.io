@@ -2,6 +2,7 @@
 layout: post
 title:  "AWS Elastic Beanstalk에서 HTTPS 사용하기"
 date:   2019-10-15
+image:  "assets/img/img004_01.png"
 ---
 안녕하세요. 이 글은 이번 책에는 현재 없는 내용이지만, 차후 2판 인쇄를 할 때 들어갈 수도 있는 내용임을 먼저 사전에 알려드리고자 합니다.
 
