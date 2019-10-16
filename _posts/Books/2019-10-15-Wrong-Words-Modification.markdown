@@ -2,7 +2,7 @@
 layout: post
 title:  "오타 수정 예정 안내"
 date:   2019-10-15
-category: [Books]
+categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
 

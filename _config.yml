@@ -11,8 +11,6 @@ highlighter: rouge
 plugins: [jekyll-paginate]
 paginate: 5
 
-category_dir: category/
-
 navigation:
   - title: Home
     url: /index.html
