@@ -24,19 +24,72 @@ date:   2019-10-15
 <p>가상환경 생성은 위 3번의 내용대로 'virtualenv [가상환경명]'의 형태로 입력하면 가상환경이 생성되며,
 생성된 가상환경은 아래와 같이 나타납니다.</p>
 
-{% highlight python3 %}
+``` Shell
 virtualenv ve
-{% endhighlight %}
+```
 
 <img src='/assets/img/img002_01.png' />
 
 <p>그리고 138p의 가상환경 들어가는 부분의 코드는 </p>
 
-``` Python
+``` Shell
 source ve/bin/activate
 ```
- 
+Test Code
 
+{% highlight Python %}
+class User(AbstractBaseUser):
+	password = models.CharField(max_length=128)
+	username = models.CharField(unique=True, max_length=150)
+	is_superuser = models.IntegerField()
+	last_name = models.CharField(max_length=150)
+	phone = models.CharField(max_length=20)
+	email = models.CharField(max_length=254)
+	date_of_birth = models.DateTimeField()
+	date_joined = models.DateTimeField()
+	last_login = models.DateTimeField(blank=True, null=True)
+	is_staff = models.IntegerField(blank=True, null=True)
+	is_active = models.IntegerField(blank=True, null=True)
+	first_name = models.CharField(max_length=30, blank=True, null=True)
+
+	objects = UserManager()
+
+	USERNAME_FIELD = 'username'
+	REQUIRED_FIELDS = ['last_name', 'phone', 'email', 'date_of_birth']
+
+	def has_perm(self, perm, obj=None):
+		return True
+
+	def has_module_perms(self, app_label):
+		return True
+{% endhighlight %}
+
+``` Python
+class User(AbstractBaseUser):
+	password = models.CharField(max_length=128)
+	username = models.CharField(unique=True, max_length=150)
+	is_superuser = models.IntegerField()
+	last_name = models.CharField(max_length=150)
+	phone = models.CharField(max_length=20)
+	email = models.CharField(max_length=254)
+	date_of_birth = models.DateTimeField()
+	date_joined = models.DateTimeField()
+	last_login = models.DateTimeField(blank=True, null=True)
+	is_staff = models.IntegerField(blank=True, null=True)
+	is_active = models.IntegerField(blank=True, null=True)
+	first_name = models.CharField(max_length=30, blank=True, null=True)
+
+	objects = UserManager()
+
+	USERNAME_FIELD = 'username'
+	REQUIRED_FIELDS = ['last_name', 'phone', 'email', 'date_of_birth']
+
+	def has_perm(self, perm, obj=None):
+		return True
+
+	def has_module_perms(self, app_label):
+		return True
+```
 <p>위 코드이며, 설명까지도 자세히 되어 있었는데, 책에서는 'source'가 빠진 채로 've/bin/activate'로만 입력되어 있었습니다. 해당 부분에 대해서는 더불어 양해 바라겠습니다.</p>
  
 
