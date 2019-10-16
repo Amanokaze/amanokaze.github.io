@@ -31,32 +31,29 @@ Vision API를 사용하기 위해서 딱 필요한 절차만 언급하고, 그 �
  
 
 Google Cloud 관련 문서에 보면 중간중간 Credentials 라는 영어단어가 나오는데, 그거 전부 아래 사진의 '사용자 인증 정보' 이 부분에 해당되는 부분이니 참고하시면 됩니다.
-여기서부터
+
+![Credential Menu](/assets/img/img009_01.png)
  
-
-
- 
-
  
 
 그래서 사용자 인증 정보를 만들어야 하는데, '서비스 계정 키', 'API 키' 두개 다 만들어야 합니다.
 
-다만 API 키는 당장 만들지 않아도 큰 문제 없으며, 아래 언급대로 특정 권한 확인용으로만 사용되므로 이 글에서는 다루지 않겠습니다.
+다만 API 키는 당장 만들지 않아도 큰 문제 없으며, 아래 언급대로 특정 권한 확인용으로만 사용되므로 <u>이 글에서는 다루지 않겠습니다.</u>
+
+![Create Info](/assets/img/img009_02.png)
+
 
  
 
+#####서비스 계정 키: 새 서비스 계정 선택해 주시고요.
 
- 
-
-서비스 계정 키: 새 서비스 계정 선택해 주시고요.
-
-키 유형: JSON 으로 선택해주시기 바랍니다.
+#####키 유형: JSON 으로 선택해주시기 바랍니다.
 
  
 
 JSON으로 해야 REST로 API 사용할 수 있으므로 필수입니다.
 
- 
+![Create Service Accout](/assets/img/img009_03.png)
 
  
 
@@ -70,6 +67,7 @@ JSON으로 해야 REST로 API 사용할 수 있으므로 필수입니다.
  
 
 2. 서비스 계정 키 환경 변수 추가
+
 다음은 서비스 계정 키를 환경 변수에 추가해야 합니다.
 
 그런데 환경 변수에 추가하려면 서비스 계정 키가 실행하려는 호스트에 있어야 되겠죠?
@@ -78,10 +76,16 @@ JSON으로 해야 REST로 API 사용할 수 있으므로 필수입니다.
 
 리눅스에서는 환경 변수 추가를 export 명령어로 다음과 같이 수행합니다.
 
+{% highlight Shell %}
 export GOOGLE_APPLICATION_CREDENTIALS="[경로]"
+{% endhighlight %}
+
 실제 사용 예제는 다음과 같겠죠.
 
+{% highlight Shell %}
 export GOOGLE_APPLICATION_CREDENTIALS="/home/ubuntu/google/google_key.json"
+{% endhighlight %}
+
 사실 Windows는 안해봐서 잘 모르겠습니다만, 아마 내컴퓨터 - 고급 - 환경변수 여기서 추가하는게 아닐까 싶습니다.
 
  
@@ -93,6 +97,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/ubuntu/google/google_key.json"
  
 
 3. Vision API 예제 코드 실행
+
 Vision API 예제 코드는 다른 것에서 고민할 필요 없습니다. Google Cloud에 다 나와 있으니 해보시면 됩니다.
 
 REST API를 사용하여 실행할 예정이므로, 명령어는 curl을 사용할게요.
@@ -101,29 +106,25 @@ Google Cloud 예제는 다음과 같습니다.
 
  
 
-https://cloud.google.com/vision/docs/ocr#vision-detect-text-cli-curl
+<https://cloud.google.com/vision/docs/ocr#vision-detect-text-cli-curl>
 
  
-텍스트 감지(OCR)  |  Cloud Vision API 문서  |  Google Cloud
-
-참고: 최근에 문서 텍스트 감지에 새로운 기능과 필드가 추가되었습니다. 자세한 내용은 출시 노트를 참조하세요.참고: 이 API를 모바일 앱에서 사용하는 경우 Firebase용 ML 키트를 사용해 보세요. 이 키트는 Cloud Vision 서비스를 사용하기 위한 네이티브 Android 및 iOS SDK와 함께 커스텀 ML 모델을 사용하는 기기별 ML Vision API 및 기기별 추론을 제공합니다. 광 문자 인식(OCR) Vision API는 이미지에서 텍
-
-cloud.google.com
 위 구글 문서 중 텍스트 감지 - Curl 명령어로 사용한 예제를 실행해 보겠습니다.
 
 한글이 잘 나오는지 확인하기 위해서 예제에 있는 URI 말고, 인터넷에 돌아다니는 배너광고를 하나 넣겠습니다.
 
  
 
-https://ssl.pstatic.net/tveta/libs/1249/1249571/7842d5f1c61a007c932e_20191004171838293.jpg
+<https://ssl.pstatic.net/tveta/libs/1249/1249571/7842d5f1c61a007c932e_20191004171838293.jpg>
 
+![Speakingmax Banner](/assets/img/img009_04.png)
 
-※ 스피킹맥스 배너광고 절대 아닙니다! 위 이미지 파일이 예제 파일입니다. 어차피 클릭해도 안넘어갑니다.
+<small><b><font color=#F00>※ 스피킹맥스 배너광고 절대 아닙니다! 위 이미지 파일이 예제 파일입니다. 어차피 클릭해도 안넘어갑니다.</font></b></small>
 
  
 
  
-
+{% highlight Curl %}
 curl -X POST \
      -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) \
      -H "Content-Type: application/json; charset=utf-8" \
@@ -143,16 +144,17 @@ curl -X POST \
         }
       ]
     }" "https://vision.googleapis.com/v1/images:annotate"
+{% endhighlight %}
+
+
 그래서 실행하면, JSON 형태로 출력합니다. 위 배너광고하고 비교해봤을 때, 한글 추출 잘 해내는걸 확인할 수 있습니다.
 
- 
-
-
- 
+![Contains Hangul Result](/assets/img/img009_05.png)
 
 만약에 서비스 계정 키가 생성되어있지 않다면?
 
  
+![Permission Failed](/assets/img/img009_06.png)
 
 
 이런 식으로 Permission Denied가 나올 것입니다. 그래서 서비스 계정 키를 생성해야 하니 참고 바랍니다.
