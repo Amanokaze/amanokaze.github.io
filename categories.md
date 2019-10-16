@@ -4,7 +4,18 @@ title: Categories
 ---
 
 <div id="articles">
+<h3>
 {% assign pages_list = site.pages %}
+{% for node in pages_list %}
+    {% if node.title != null %}
+    {% if node.layout == "category" %}
+        <a class="category-link {% if page.url == node.url %} active{% endif %}"
+        href="{{ site.baseurl }}{{ node.url }}">{{ node.title }}</a> |
+    {% endif %}
+    {% endif %}
+{% endfor %}
+</h3>
+<h1>&nbsp;</h1>
 {% for node in pages_list %}
     {% if node.title != null %}
     {% if node.layout == "category" %}
