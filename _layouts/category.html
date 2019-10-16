@@ -1,17 +1,21 @@
 ---
 layout: default
 ---
+
+<h3>page.title</h3>
 <ul class="posts-list">
   
   {% assign category = page.category | default: page.title %}
   {% for post in site.categories[category] %}
     <li>
-      <h3>
+      <p>
         <a href="{{ site.baseurl }}{{ post.url }}">
           {{ post.title }}
         </a>
-        <small>{{ post.date | date_to_string }}</small>
-      </h3>
+        <span class="date">{{ post.date | date: '%B %d, %Y' }}
+            • <a href="https://amanokaze.github.io{{ post.url }}#disqus_thread">0 Comments</a>
+        </span>
+    </p>
     </li>
   {% endfor %}
   
