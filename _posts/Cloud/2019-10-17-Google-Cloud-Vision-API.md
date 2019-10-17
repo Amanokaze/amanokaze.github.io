@@ -22,7 +22,7 @@ Vision API를 사용하기 위해서 딱 필요한 절차만 언급하고, 그 �
 
  
 
-1. API 인증을 위한 서비스 계정 키 생성
+### 1. API 인증을 위한 서비스 계정 키 생성
 
 일단 Vision API를 사용하려면, API 사용을 위한 인증이 있어야 합니다.
 
@@ -62,7 +62,7 @@ JSON으로 해야 REST로 API 사용할 수 있으므로 필수입니다.
 
  
 
-2. 서비스 계정 키 환경 변수 추가
+### 2. 서비스 계정 키 환경 변수 추가
 
 다음은 서비스 계정 키를 환경 변수에 추가해야 합니다. 그런데 환경 변수에 추가하려면 서비스 계정 키가 실행하려는 호스트에 있어야 되겠죠?
 
@@ -88,7 +88,7 @@ export GOOGLE_APPLICATION_CREDENTIALS="/home/ubuntu/google/google_key.json"
 
  
 
-3. Vision API 예제 코드 실행
+### 3. Vision API 예제 코드 실행
 
 Vision API 예제 코드는 다른 것에서 고민할 필요 없습니다. Google Cloud에 다 나와 있으니 해보시면 됩니다. 
 REST API를 사용하여 실행할 예정이므로, 명령어는 curl을 사용할게요.

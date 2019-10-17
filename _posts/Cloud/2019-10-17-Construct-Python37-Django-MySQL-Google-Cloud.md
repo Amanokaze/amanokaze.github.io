@@ -36,7 +36,7 @@ Ubuntu 18.04 LTS에서는 Python 3.6이 기본으로 설치되어 있습니다.
 
  
 
-1. Python 3.7 설치
+### 1. Python 3.7 설치
  
 
 Python 3.7 설치를 위해서 먼저 다음 명령어를 수행합니다.
@@ -62,7 +62,8 @@ $ sudo apt-get install python3.7
 
  
 
-2. Python 기본 버전 변경
+### 2. Python 기본 버전 변경
+
 기본 버전 변경을 위한 설정 방법은 다음과 같습니다.
 
  
@@ -109,7 +110,7 @@ Press <enter> to keep the current choice[*], or type selection number: 2
 
  
 
-3. PIP / VEnv / Django 설치
+### 3. PIP / VEnv / Django 설치
  
 
 이제 Python 버전도 3.7이 기본 버전으로 되었으니 다음 설치를 진행합니다.
@@ -149,7 +150,7 @@ $ source venv/bin/activate
 
  
 
-4. mysqlclient 설치
+### 4. mysqlclient 설치
  
 
 일반적으로 Django에서 MySQL을 사용하기 위해서는 

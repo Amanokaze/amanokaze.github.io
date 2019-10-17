@@ -37,20 +37,20 @@ AWS EC2 인스턴스에서 Google Cloud SDK 설치하는 법을 다루도록 하
 
  
 
-1. 환경변수 생성
+#### 1. 환경변수 생성
 
 {% highlight Shell %}
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
 {% endhighlight %}
 
-2. 패키지 소스 URI 추가
+#### 2. 패키지 소스 URI 추가
 
 {% highlight Shell %}
 echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 {% endhighlight %}
  
 
-3. Google Cloud 공개키 가져옴
+#### 3. Google Cloud 공개키 가져옴
 
 {% highlight Shell %}
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -58,7 +58,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
 ![Google CLoud Private Key Import](/assets/img/img008_02.png)
 
-4. Google Cloud SDK 설치
+#### 4. Google Cloud SDK 설치
 
 {% highlight Shell %}
 sudo apt-get update && sudo apt-get install google-cloud-sdk
@@ -67,7 +67,7 @@ sudo apt-get update && sudo apt-get install google-cloud-sdk
 ![Google Cloud SDK Installation](/assets/img/img008_01.png)
 <small>(앞 15줄만 캡쳐, 실제로 내용 더 있습니다)</small>
 
-5. Google Cloud 시작
+#### 5. Google Cloud 시작
 
 {% highlight Shell %}
 gcloud init
@@ -106,9 +106,9 @@ gcloud init
 
 
  
-1) putty, Xming을 설치한 후 putty에서 X11 터미널 사용 설정을 한 후 Xming을 사용해서 Firefox를 설치한 후 사용
+#### 1) putty, Xming을 설치한 후 putty에서 X11 터미널 사용 설정을 한 후 Xming을 사용해서 Firefox를 설치한 후 사용
 
-2) MobaXterm을 설치한 후 X11 사용 설정 체크 후 Firefox를 설치한 후 사용
+#### 2) MobaXterm을 설치한 후 X11 사용 설정 체크 후 Firefox를 설치한 후 사용
 
  
 

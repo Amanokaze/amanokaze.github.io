@@ -43,7 +43,7 @@ docs.aws.amazon.com
 
  
 
-1. ACM 공인인증서 생성
+### 1. ACM 공인인증서 생성
 
 ACM이라 함은 AWS Certificate Manager의 줄임말로, AWS의 인증서 관리를 위한 서비스입니다. 이 서비스에서는 공인인증서, 사설인증서 등을 모두 생성할 수 있으며, 여기서 생성된 공인인증서를 통해서 HTTPS를 사용하도록 구성되어 있습니다.
 
@@ -119,7 +119,7 @@ Route 53을 이동해도 정상적으로 등록된 것을 확인할 수 있으�
 
  
 
-2. Elastic Beanstalk에 ACM 인증서 등록
+### 2. Elastic Beanstalk에 ACM 인증서 등록
 
 이제 Elastic Beanstalk로 이동합니다. 
 
