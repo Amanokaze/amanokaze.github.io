@@ -250,5 +250,7 @@ Successfully installed mysqlclient-1.4.4
  
 
 Python 3.7 설치 - <https://aliwo.github.io/swblog/linux/ubuntu/ubuntu-new-python/#>
+
 Python 버전 선택 - <https://codechacha.com/ko/change-python-version/>
+
 MysqlClient for Python 3.7 - <https://stackoverflow.com/questions/51117503/python-3-7-failed-building-wheel-for-mysql-python>
