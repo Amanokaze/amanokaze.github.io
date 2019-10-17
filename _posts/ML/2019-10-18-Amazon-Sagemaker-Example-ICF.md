@@ -98,7 +98,7 @@ train 디렉토리를 들어가면 위와 같이 caltech-256-60-train.rec 파일
 
  
 
-###2. Training the ResNet Model (ResNet 모델 학습)
+### 2. Training the ResNet Model (ResNet 모델 학습)
 
 여기서 ResNet이라고 하는 것은 Deep Learning에서 사용되는 Residual neural Network의 줄임말로, 딥러닝에서 사용되는 모델이라고 합니다. 솔직히 이 부분이 구체적으로 무엇이다라는 것을 설명하려면 한도 끝도 없기 때문에 그냥 이런 것 정도 있다라는 것만 이해하고 넘어가시면 될 것 같고요. 
 
