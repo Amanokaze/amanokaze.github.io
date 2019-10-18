@@ -108,7 +108,7 @@ Google Cloud 예제는 다음과 같습니다.
 
 <https://ssl.pstatic.net/tveta/libs/1249/1249571/7842d5f1c61a007c932e_20191004171838293.jpg>
 
-![Speakingmax Banner](/assets/img/img009_04.png)
+![Speakingmax Banner](/assets/img/img009_04.jpg)
 
 <small><b><font color=#F00>※ 스피킹맥스 배너광고 절대 아닙니다! 위 이미지 파일이 예제 파일입니다. 어차피 클릭해도 안넘어갑니다.</font></b></small>
 
