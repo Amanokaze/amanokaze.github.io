@@ -2,7 +2,7 @@
 layout: post
 title:  "AWS Elastic Beanstalk에서 HTTPS 사용하기"
 date:   2019-10-15
-image:  "assets/img/img004_01.png"
+image:  "img004_01.png"
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Authenticate, 인증, 인증서, HTTPS, Python, 파이썬]
 ---

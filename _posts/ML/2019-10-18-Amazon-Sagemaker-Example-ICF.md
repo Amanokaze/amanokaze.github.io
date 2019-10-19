@@ -2,7 +2,7 @@
 layout: post
 title:  "AWS 머신러닝 Amazon Sagemaker 예제 - Image Classification Fulltraining"
 date:   2019-10-18
-image:  "assets/img/img011_01.png"
+image:  "img011_01.png"
 categories: [ML]
 tags: [Python, 파이썬, Amazon, AWS, Sagemaker, Jupyter, Notebook, Jupyterlab, 주피터, 세이지메이커, 아마존, 학습, 모델, Image, 이미지, Classification, 분류, Fulltraining, 검증, 검증모델, 학습모델, 테스트모델, 테스트, Test]
 ---
