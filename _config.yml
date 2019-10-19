@@ -2,7 +2,7 @@ title: Onik Lab.
 description: Various IT-based research space, django, cloud, machine learning, and so on.
 
 url: https://amanokaze.github.io
-baseurl: ""
+baseurl: "https://amanokaze.github.io/"
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
 
