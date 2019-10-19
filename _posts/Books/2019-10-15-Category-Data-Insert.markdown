@@ -57,7 +57,7 @@ insert into board_categories (category_type, category_code, category_name, categ
 
 생성된 데이터는 다음 [그림] 과 같이 나타난다.
 
-![Table Insert Result](/assets/img/img003_01.png)
+![Table Insert Result]({{ '/assets/img/img003_01.png)
 
 
 id는 자동으로 생성되므로, 데이터 삽입 시 입력하지 않아도 자동으로 생성되며, creation_date 역시 현재 시간으로 자동으로 생성된다. 그 외의 데이터는 위 구문에 따라 직접 입력한 내용으로, 실제 게시판을 구성할 때에 해당 데이터를 사용하여 게시물 데이터를 다루고 웹페이지에도 표시하는 역할을 수행한다.
