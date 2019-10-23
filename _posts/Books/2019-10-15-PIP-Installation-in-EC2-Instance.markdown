@@ -17,7 +17,7 @@ $ sudo apt install python3-pip
 
 하지만, AWS에서 제공하는 EC2 인스턴스 중 일부 운영체제의 버전에서는 python3 설치는 정상적으로 되나, pip3가 설치되지 않는 경우가 발생하는 것으로 확인되었습니다.
 
-![PIP Error](/assets/img/img005_01.png)
+![PIP Error]({{ '/assets/img/img005_01.png' | prepend: site.baseurl }})
 
 
 위와 같이 'Unable to locate package python3-pip'가 나오면서 설치가 되지 않을 수도 있습니다.
@@ -34,7 +34,7 @@ $ sudo apt install python3-pip
 
 위와 같이 패키지 업그레이드까지 완료된 후, 다시 pip3를 설치하면 정상적으로 설치가 이루어집니다.
 
-![PIP Completed](/assets/img/img005_02.png)
+![PIP Completed]({{ '/assets/img/img005_02.png' | prepend: site.baseurl }})
 
 
 Python3 및 PIP3 설치 시 참고하시기 바라겠습니다.

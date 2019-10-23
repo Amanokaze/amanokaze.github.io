@@ -74,7 +74,7 @@ crop_image = im.crop((500, 0, 875, height))
 생성 결과는 아래와 같습니다.
 
  
-![Image Crop Result](/assets/img/img007_01.png)
+![Image Crop Result]({{ '/assets/img/img007_01.png' | prepend: site.baseurl }})
 
 
 enumerate() 함수를 사용해서 for 문의 Index를 추출해서 파일 이름으로 붙였으니 구분도 쉽겠죠?

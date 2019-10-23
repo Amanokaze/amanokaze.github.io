@@ -55,7 +55,7 @@ echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" | sudo tee 
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 {% endhighlight %}
 
-![Google CLoud Private Key Import](/assets/img/img008_02.png)
+![Google CLoud Private Key Import]({{ '/assets/img/img008_02.png' | prepend: site.baseurl }})
 
 #### 4. Google Cloud SDK 설치
 
@@ -63,7 +63,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 sudo apt-get update && sudo apt-get install google-cloud-sdk
 {% endhighlight %}
 
-![Google Cloud SDK Installation](/assets/img/img008_01.png)
+![Google Cloud SDK Installation]({{ '/assets/img/img008_01.png' | prepend: site.baseurl }})
 <small>(앞 15줄만 캡쳐, 실제로 내용 더 있습니다)</small>
 
 #### 5. Google Cloud 시작
@@ -76,7 +76,7 @@ gcloud init
 
 이 부분도 아무 문제없이 설치되었으면 이 글 쓰지도 않았을 겁니다.
 
-![Required Login in gcloud](/assets/img/img008_03.png)
+![Required Login in gcloud]({{ '/assets/img/img008_03.png' | prepend: site.baseurl }})
 
 
 로그인하고 설치하라고 나오죠. 그리고 아래 주소 들어가라고 나오죠.
@@ -131,21 +131,21 @@ gcloud init
 어쨌든, 이대로 하면 다음과 같이 실행할 수 있습니다.
 
  
-![gloud execution](/assets/img/img008_04.png)
+![gloud execution]({{ '/assets/img/img008_04.png' | prepend: site.baseurl }})
 
 Firefox를 백그라운드로 실행해주시고, 그런 다음 아래 사이트가 나타나면 사이트를 복사해주신 후 Firefox에서 붙여넣기 해주시기 바랍니다. 그래서 거기서 인증 하라는 대로 해주시고 완료하면, 다음과 같이 결과가 나타날 것입니다.
 
-![firefox authorization](/assets/img/img008_05.png)
+![firefox authorization]({{ '/assets/img/img008_05.png' | prepend: site.baseurl }})
 
 
 중간에 프롬프트에서 간혹 아래와 같이 나오는 경우 있습니다만, 무시하셔도 됩니다. 브라우저에서 진행만 완료되면 문제없습니다.
 
-![Ignore Warning](/assets/img/img008_06.png)
+![Ignore Warning]({{ '/assets/img/img008_06.png' | prepend: site.baseurl }})
 
 
 완료되면 다음과 같이 나타날 것입니다.
 
-![gcloud login completed](/assets/img/img008_07.png)
+![gcloud login completed]({{ '/assets/img/img008_07.png' | prepend: site.baseurl }})
 
 
 프로젝트 선택하시고요. 없으면 새로 만들어도 됩니다. 그 다음 리전 선택하는 부분 나오는데, 이거는 사실 안해도 상관은 없을 것 같습니다.
@@ -156,7 +156,7 @@ Firefox를 백그라운드로 실행해주시고, 그런 다음 아래 사이트
 
 도쿄에서 거의 대부분의 Google Cloud 서비스를 지원하므로 asia-northeast1을 추천합니다.
 
-![gcloud installation](/assets/img/img008_08.png)
+![gcloud installation]({{ '/assets/img/img008_08.png' | prepend: site.baseurl }})
 
 
 설치가 완료되었네요. 잘 이용하시기 바랍니다.
