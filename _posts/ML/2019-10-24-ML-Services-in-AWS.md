@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "AWS에서 제공하는 머신러닝 서비스"
-date:   2019-10-18
+date:   2019-10-24
 categories: [ML]
 tags: [Python, 파이썬, Python37, Google, Cloud, Django, 장고, MySQL, SQL, 구글, 클라우드]
 ---
