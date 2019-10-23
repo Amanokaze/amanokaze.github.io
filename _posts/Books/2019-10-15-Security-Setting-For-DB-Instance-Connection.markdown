@@ -2,7 +2,6 @@
 layout: post
 title:  "DB Instance 연결을 위한 보안 설정"
 date:   2019-10-15
-image:  "assets/img/img001_01.png"
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, DB, Instance, Python, 파이썬 ]
 ---

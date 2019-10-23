@@ -2,7 +2,6 @@
 layout: post
 title:  "Category 데이터 Insert"
 date:   2019-10-15
-image:  "assets/img/img003_01.png"
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, MySQL, Table, 테이블, Python, 파이썬]
 ---
