@@ -655,24 +655,28 @@ urlpatterns = [
 ] 
 {% endhighlight %}
 
+#### 7) imageapp/templates/upload_file.html
+
+템플릿도 같이 구현하겠습니다.
+
 
 
 {% highlight HTML %}
 <html>
 <head>
         <title>Upload Image</title>
-        {% load static %}<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+        {&#37; load static &#37;}<script src="{&#37; static 'js/jquery-3.4.1.min.js' &#37;}"></script>
 </head>
 <body>
         <form method="POST" enctype="multipart/form-data" name="imgform">
-        {% csrf_token %}
+        {&#37; csrf_token &#37;}
         {{ form }}
         <button name="choide" value="{{form.value}}">File Upload</button>
         </form>
     <p>
-    {% for img in imgdata %}
+    {&#37; for img in imgdata &#37;}
         <img src="{{ img.image.url }}"/>
-    {% endfor %}
+    {&#37; endfor &#37;}
     </p>    
 </body>
 </html>
