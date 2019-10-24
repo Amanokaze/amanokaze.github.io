@@ -656,7 +656,7 @@ urlpatterns = [
 {% endhighlight %}
  
 
-#### 7) imageapp/templates/upload_file.html
+#### 7) img
 
 템플릿도 같이 구현하겠습니다.
 
