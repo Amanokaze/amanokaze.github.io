@@ -647,17 +647,6 @@ FormView를 상속한 UploadFileView 에서 모든 동작이 이루어지도록 
 위의 imageproj/urls.py와 당연히 다른 파일입니다. 위 urls.py는 프로젝트의 URL 설정 파일이고, 지금 나타낼 urls.py는 imageapp에 대한 앱 URL 설정 파일입니다. 이미지 업로드 처리 템플릿 주소만 구현할 것이므로 내용은 간단합니다.
 
  
-{% highlight Python %}
-from django.urls import path
-from imageapp.views import *
-
-urlpatterns = [
-    path('upload_image/', UploadFileView.as_view()),
-] 
-{% endhighlight %}
- 
-
-#### 7) imageapp/templates/upload_file.html
 
 템플릿도 같이 구현하겠습니다.
 
