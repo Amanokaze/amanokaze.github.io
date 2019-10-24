@@ -439,7 +439,7 @@ else:
 설정을 완료했으면, DB가 변경되었으므로 migration과 개발환경 서버를 실행해서 이상유무를 먼저 확인하겠습니다.
 
  
-
+{% highlight Shell %}
 (venv2)/imageproj$ python manage.py migrate
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, sessions
@@ -470,6 +470,8 @@ October 11, 2019 - 07:14:09
 Django version 2.2, using settings 'imageproj.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
+{% endhighlight %}
+
 다행히도 아무 이상이 없는 것으로 확인되었습니다.
 
 이제 이미지 첨부를 위해서 Django 코드를 최대한 간단하게 생성하겠습니다.
@@ -520,6 +522,7 @@ MEDIA_ROOT = 'media'
 2) imageproj/urls.py 
 imageapp을 URL에 추가하고, MEDIA, STATIC 파일 첨부도 모두 진행해야 하므로 urlpatterns에 아래 문구도 같이 추가해줍니다.
 
+{% highlight Python %}
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -530,7 +533,7 @@ urlpatterns = [
     path('imageapp/', include('imageapp.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- 
+{% endhighlight %} 
 
 3) imageapp/models.py
 앞서 생성한 테이블을 모델에 등록해야 되겠죠.
@@ -538,14 +541,14 @@ urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 모델 등록을 편리하게 하는 스크립트 명령어인 inspectdb를 먼저 사용합니다.
 
  
-
+{% highlight Shell %}
 (venv)/imageproj$ python manage.py inspectdb t_images > imageapp/models.py
- 
+{% endhighlight %}
 
 그리고 models.py 파일을 다음과 같이 수정해줍니다.
 
  
-
+{% highlight Python %}
 from django.db import models
 from django.utils import timezone
 
@@ -555,6 +558,7 @@ class TImages(models.Model):
     class Meta:
         managed = False
         db_table = 't_images'
+{% endhighlight %}
  
 
 image 필드를 보면, 기본으로 CharField로 생성되어 있지만, 이를 ImageField로 반드시 바꿔줘야 합니다. 그래야 파일 첨부가 됩니다. upload_to 의 경우는 저장 경로를 설정하는 부분이므로, 가장 무난하게 날짜 포맷으로 써주시면 됩니다.
@@ -571,17 +575,20 @@ timezone을 import하는 이유는 creation_date의 값을 현재시간(timezone
 다음은 Form을 생성하겠습니다. forms.py 는 필수 생성 파일은 아니지만, 파일 다중 첨부를 위한 양식으로 표현해야 하기 때문에, forms.py에서 명시하는 것이 더욱 명확하므로, 아래와 같이 간단하게 file_field만 선언하겠습니다.
 
  
+{% highlight Python %}
 
 from django import forms
 
 class FileFieldForm(forms.Form):
     file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+{% endhighlight %}
+
 
 5) imageapp/views.py
 이제 뷰를 생성하겠습니다.
 
  
-
+{% highlight Python %}
 from django.shortcuts import render
 from django.template.context_processors import csrf
 from imageapp.models import *
@@ -610,7 +617,7 @@ class UploadFileView(FormView):
         context = super().get_context_data(**kwargs)
         context['imgdata'] = TImages.objects.all()
         return context
- 
+{% endhighlight %} 
 
 View에 대해서 간단히 설명하면 다음과 같습니다.
 
