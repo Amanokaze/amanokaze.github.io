@@ -646,7 +646,109 @@ FormView를 상속한 UploadFileView 에서 모든 동작이 이루어지도록 
 
 위의 imageproj/urls.py와 당연히 다른 파일입니다. 위 urls.py는 프로젝트의 URL 설정 파일이고, 지금 나타낼 urls.py는 imageapp에 대한 앱 URL 설정 파일입니다. 이미지 업로드 처리 템플릿 주소만 구현할 것이므로 내용은 간단합니다.
 
-* a 
+
+<https://medium.com/swlh/preparing-your-django-application-for-google-cloud-run-7c8cb7b7464b>
+
+ 
+{% highlight Python %}
+from django.conf import settings
+from storages.backends.gcloud import GoogleCloudStorage
+from storages.utils import setting
+from urllib.parse import urljoin
+
+
+class GoogleCloudMediaStorage(GoogleCloudStorage):
+    """GoogleCloudStorage suitable for Django's Media files."""
+
+    def __init__(self, *args, **kwargs):
+        if not settings.MEDIA_URL:
+            raise Exception('MEDIA_URL has not been configured')
+        kwargs['bucket_name'] = setting('GS_MEDIA_BUCKET_NAME')
+        super(GoogleCloudMediaStorage, self).__init__(*args, **kwargs)
+
+    def url(self, name):
+        """.url that doesn't call Google."""
+        return urljoin(settings.MEDIA_URL, name)
+
+
+class GoogleCloudStaticStorage(GoogleCloudStorage):
+    """GoogleCloudStorage suitable for Django's Static files"""
+
+    def __init__(self, *args, **kwargs):
+        if not settings.STATIC_URL:
+            raise Exception('STATIC_URL has not been configured')
+        kwargs['bucket_name'] = setting('GS_STATIC_BUCKET_NAME')
+        super(GoogleCloudStaticStorage, self).__init__(*args, **kwargs)
+
+    def url(self, name):
+        """.url that doesn't call Google."""
+        return urljoin(settings.STATIC_URL, name)
+{% endhighlight %}
+
+파일이 좀 길긴 한데, 특별한 내용은 없습니다. settings의 MEDIA_URL과 STATIC_URL을 가지고 오는 부분과, 초기 선언 시 GS_MEDIA_BUCKET_NAME과 GS_STATIC_BUCKET_NAME을 가지고 와서 설정하는 부분입니다. 해당 변수는 이미 위에서 선언했기 때문에 그대로 사용하면 됩니다.
+
+ 
+
+ 
+
+#### 4) Storage 권한 설정 및 secret/bucket-admin.json
+
+앞서서는 Google Cloud Storage에 Media/Static 파일을 저장하고 불러오기 위해서 버킷을 지정했습니다. 특히 Google Cloud Storage를 외부의 다른 서비스에서 사용할 때, 서비스 계정을 별도로 설정하지 않으면 Storage에 접근할 때 에러가 발생합니다. 
+
+ 
+
+이 부분은 Google Cloud Storage와 Amazon S3의 가장 큰 차이점이라고도 볼 수 있습니다. Amazon S3는 버킷 사용권한만 설정하면 바로 접근이 가능한 반면, Google Storage는 버킷 사용권한을 설정하더라도 서비스 계정을 설정하지 않으면 사용을 할 수 없습니다. App Engine에 배포되는 Django 웹 애플리케이션은 웹 페이지 접속 시 해당 페이지에 대한 Media/Static 파일을 호출할 때마다 애플리케이션에 등록된 서비스 계정을 확인한 후 접근 이상 유무를 판단하기 때문입니다.
+
+ 
+
+제가 이미지 다중 첨부 코드를 작성하고 테스트하면서 가장 많이 애먹었던 부분도 이 부분이였습니다. 왜 설정할것 다 했는데도 어째서 Google Storage의 파일을 읽는 부분에서 자꾸 에러가 발생하는가를 확인하다가 위와 같은 사실을 알고, 이를 위해서 따로 파일 설정을 해야 한다는 것을 말이죠.
+
+ 
+
+바로 다음에는 secret/bucket-admin.json 파일을 생성하고 등록하는 방법을 소개할 예정입니다. 이 파일은 바로 위에서 언급된 서비스 계정에 대한 정보가 있는 json 파일입니다.
+
+ 
+
+이 파일을 생성하기 위해서는 Google Cloud 메뉴의 API 및 서비스 - 사용자 인증 정보로 먼저 들어갑니다.
+
+ 
+
+
+사용자 인증 정보는 API키, OAuth 2.0 클라이언트, 서비스 계정 키 세 종류가 있습니다. 아래 화면은 제가 이미 생성했던 키이므로 무시하셔도 좋고, 신규로 '사용자 인증 정보 만들기'를 선택합니다.
+
+ 
+
+
+앞서 Storage에 대한 서비스 계정을 설정해야 한다고 했으므로 '서비스 계정 키'를 선택합니다. 
+
+
+서비스 계정 생성을 위한 정보는 다음과 같이 입력합니다.
+
+ 
+
+* 서비스 계정: 새 서비스 계정
+* 이름: 임의의 이름
+* 역할: 프로젝트 - 소유자 (유사 다른 권한을 선택해도 됩니다)
+* 키 유형: JSON
+
+생성되면, JSON 파일을 다운로드받을 수 있습니다. JSON 파일의 형태는 다음과 같습니다.
+
+ 
+{% highlight JSON %}
+{
+  "type": "service_account",
+  "project_id": "<Project ID>",
+  "private_key_id": "<Key ID>",
+  "private_key": "<Key>",
+  "client_email": "test-468@<프로젝트명>.iam.gserviceaccount.com",
+  "client_id": "<Client ID>",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "<X509 Cert Url>"
+}
+{% endhighlight %}
+ 
 
 생성된 파일은 수정을 하면 안됩니다. 그대로 사용해야 합니다.
 
