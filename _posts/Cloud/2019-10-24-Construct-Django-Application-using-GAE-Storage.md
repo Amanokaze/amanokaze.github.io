@@ -665,7 +665,7 @@ urlpatterns = [
 <html>
 <head>
         <title>Upload Image</title>
-        {&#37; load static &#37;}<script src="{&#37; static 'js/jquery-3.4.1.min.js' &#37;}"></script>
+        {\% load static &#37;}<script src="{&#37; static 'js/jquery-3.4.1.min.js' &#37;}"></script>
 </head>
 <body>
         <form method="POST" enctype="multipart/form-data" name="imgform">
