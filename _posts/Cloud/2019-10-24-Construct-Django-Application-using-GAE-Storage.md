@@ -657,6 +657,28 @@ urlpatterns = [
 
 
 
+{% highlight HTML %}
+<html>
+<head>
+        <title>Upload Image</title>
+        {% load static %}<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+</head>
+<body>
+        <form method="POST" enctype="multipart/form-data" name="imgform">
+        {% csrf_token %}
+        {{ form }}
+        <button name="choide" value="{{form.value}}">File Upload</button>
+        </form>
+    <p>
+    {% for img in imgdata %}
+        <img src="{{ img.image.url }}"/>
+    {% endfor %}
+    </p>    
+</body>
+</html>
+{% endhighlight %}
+
+
 
 위 코드에서는 Django Template Language를 사용해서 Form 및 첨부파일 데이터를 표현하는 부분이 있다는 것 정도만 참고하시면 됩니다. 다만 중간에 부족하다고 느껴지는 부분이 있을 것 같아서 부연 설명도 같이 하겠습니다.
 
