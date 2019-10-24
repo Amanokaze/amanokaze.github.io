@@ -484,3 +484,48 @@ Quit the server with CONTROL-C.
 
  
 
+ 
+
+### 6. Django 이미지 첨부 소스코드 작성
+
+#### 1) imageproj/settings.py 
+
+settings.py에는 여러 부분을 미리 추가해야 합니다.
+
+ 
+
+개발 환경에서 실행한 결과를 조회하고, 배포 환경에서도 실행 결과를 조회해야 하므로, 접근 호스트 설정을 모든 호스트로 하겠습니다.
+
+ 
+{% highlight Python %}
+ALLOWED_HOSTS = ["*"]
+{% endhighlight %} 
+ 
+
+다음은 imageapp 앱을 추가했으므로, 아래와 같이 수정합니다.
+
+{% highlight Python %}
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'imageapp',
+]
+{% endhighlight %} 
+ 
+
+맨 아래의 STATIC과 MEDIA URL, Root를 설정합니다. 참고로 아래 경로는 개발환경에서만 사용되는 경로로, 배포환경에서는 경로를 변경해야 합니다. 
+
+변경이 귀찮으시다면 'if DEBUG:' 분기를 사용해서 나눠주셔도 됩니다.
+
+ 
+
+{% highlight Python %}
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
+{% endhighlight %} 
+ 
