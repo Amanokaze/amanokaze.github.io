@@ -19,21 +19,11 @@ tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애
 ACM 공인인증서 생성:
 <https://docs.aws.amazon.com/ko_kr/acm/latest/userguide/gs-acm-request-public.html>
 
- 
-공인 인증서 요청 - AWS Certificate Manager
-
-공인 인증서 요청 다음 단원에서는 ACM 콘솔 또는 AWS CLI를 사용하여 공인 ACM 인증서를 요청하는 방법을 설명합니다. 인증서 요청 시 문제가 있으면 인증서 요청 문제 해결을 참조하십시오. .IO 도메인에 대한 인증서 요청 시 문제가 있으면 .IO 도메인 문제 해결을 참조하십시오. 사설 인증 기관(CA)을 사용하여 사설 인증서를 요청하려면 사설 인증서 요청 단원을 참조하십시오. 콘솔을 사용하여 공인 인증서 요청 ACM 공인 인증서를 요청하려면(콘솔
-
 docs.aws.amazon.com
 Elastic Beanstalk의 HTTPS 사용:
 <https://docs.aws.amazon.com/ko_kr/elasticbeanstalk/latest/dg/configuring-https.html>
 
  
-Elastic Beanstalk 환경에 대한 HTTPS 구성 - AWS Elastic Beanstalk
-
-Elastic Beanstalk 환경에 대한 HTTPS 구성 Elastic Beanstalk 환경에 대한 사용자 지정 도메인 이름을 구매하고 구성한 경우, HTTPS를 사용하여 사용자가 안전하게 웹 사이트에 연결할 수 있습니다. 도메인 이름이 없는 경우, 자체 서명된 인증서가 있는 HTTPS를 개발 및 테스트 용도로 사용할 수 있습니다. 사용자 데이터 또는 로그인 정보를 전송하는 애플리케이션에서 HTTPS는 필수입니다. Elastic Beanstalk 환
-
-docs.aws.amazon.com
 이번 게시물은 위 2개의 페이지에서 참조하였음을 다시한번 알려드립니다.
 
  
