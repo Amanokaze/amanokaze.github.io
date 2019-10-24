@@ -625,20 +625,21 @@ FormView를 상속한 UploadFileView 에서 모든 동작이 이루어지도록 
 위의 imageproj/urls.py와 당연히 다른 파일입니다. 위 urls.py는 프로젝트의 URL 설정 파일이고, 지금 나타낼 urls.py는 imageapp에 대한 앱 URL 설정 파일입니다. 이미지 업로드 처리 템플릿 주소만 구현할 것이므로 내용은 간단합니다.
 
  
-
-##from django.urls import path
+{% highlight Python %}
+from django.urls import path
 from imageapp.views import *
 
 urlpatterns = [
     path('upload_image/', UploadFileView.as_view()),
 ] 
+{% endhighlight %}
  
 
 7) imageapp/templates/upload_file.html
 템플릿도 같이 구현하겠습니다.
 
  
-
+{% highlight HTML %}
 <html>
 <head>
         <title>Upload Image</title>
@@ -657,7 +658,7 @@ urlpatterns = [
     </p>    
 </body>
 </html>
- 
+{% endhighlight %}
 
 위 코드에서는 Django Template Language를 사용해서 Form 및 첨부파일 데이터를 표현하는 부분이 있다는 것 정도만 참고하시면 됩니다. 다만 중간에 부족하다고 느껴지는 부분이 있을 것 같아서 부연 설명도 같이 하겠습니다.
 
@@ -812,7 +813,7 @@ DEBUG = False
 다음은 MEDIA, STATIC 파일 설정입니다. 위에서 지정했던 부분은 모두 주석처리하고 아래와 같이 입력해주시면 됩니다.
 
  
-
+{% highlight Python %}
 # Development Env Variable
 #STATIC_URL = '/static/'
 #MEDIA_URL = '/media/'
@@ -828,7 +829,7 @@ GS_MEDIA_BUCKET_NAME = '<media bucket name>'
 GS_STATIC_BUCKET_NAME = '<static bucket name>'
 STATIC_URL = 'https://storage.googleapis.com/{}/'.format(GS_STATIC_BUCKET_NAME)
 MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_MEDIA_BUCKET_NAME)
- 
+{% endhighlight %}
 
 요약하자면, MEDIA, STATIC 파일이 어느 Storage에 연결되고, 어느 Bucket을 사용할 것인지를 지정하는 것으로 보시면 됩니다. 그리고 Storage 접근 시 어떤 권한을 가지고 접근할 것인가도 같이 명시되어 있습니다. 
 
@@ -881,7 +882,7 @@ config/__init__.py 파일은 생성만 하고 내용은 아무것도 입력하�
 https://medium.com/swlh/preparing-your-django-application-for-google-cloud-run-7c8cb7b7464b
 
  
-
+{% highlight Python %}
 from django.conf import settings
 from storages.backends.gcloud import GoogleCloudStorage
 from storages.utils import setting
@@ -914,6 +915,8 @@ class GoogleCloudStaticStorage(GoogleCloudStorage):
     def url(self, name):
         """.url that doesn't call Google."""
         return urljoin(settings.STATIC_URL, name)
+{% endhighlight %}
+
 파일이 좀 길긴 한데, 특별한 내용은 없습니다. settings의 MEDIA_URL과 STATIC_URL을 가지고 오는 부분과, 초기 선언 시 GS_MEDIA_BUCKET_NAME과 GS_STATIC_BUCKET_NAME을 가지고 와서 설정하는 부분입니다. 해당 변수는 이미 위에서 선언했기 때문에 그대로 사용하면 됩니다.
 
  
@@ -962,7 +965,7 @@ class GoogleCloudStaticStorage(GoogleCloudStorage):
 생성되면, JSON 파일을 다운로드받을 수 있습니다. JSON 파일의 형태는 다음과 같습니다.
 
  
-
+{% highlight JSON %}
 {
   "type": "service_account",
   "project_id": "<Project ID>",
@@ -975,6 +978,7 @@ class GoogleCloudStaticStorage(GoogleCloudStorage):
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "<X509 Cert Url>"
 }
+{% endhighlight %}
  
 
 생성된 파일은 수정을 하면 안됩니다. 그대로 사용해야 합니다.
