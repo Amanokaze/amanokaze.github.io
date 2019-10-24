@@ -529,3 +529,121 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
 {% endhighlight %} 
  
+
+#### 2) imageproj/urls.py 
+
+imageapp을 URL에 추가하고, MEDIA, STATIC 파일 첨부도 모두 진행해야 하므로 urlpatterns에 아래 문구도 같이 추가해줍니다.
+
+{% highlight Python %}
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('imageapp/', include('imageapp.urls')),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+{% endhighlight %} 
+
+#### 3) imageapp/models.py
+
+앞서 생성한 테이블을 모델에 등록해야 되겠죠.
+
+모델 등록을 편리하게 하는 스크립트 명령어인 inspectdb를 먼저 사용합니다.
+
+ 
+{% highlight Shell %}
+(venv)/imageproj$ python manage.py inspectdb t_images > imageapp/models.py
+{% endhighlight %}
+
+그리고 models.py 파일을 다음과 같이 수정해줍니다.
+
+ 
+{% highlight Python %}
+from django.db import models
+from django.utils import timezone
+
+class TImages(models.Model):
+    image = models.ImageField(upload_to="%Y%m%d", blank=True)
+    creation_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    class Meta:
+        managed = False
+        db_table = 't_images'
+{% endhighlight %}
+ 
+
+image 필드를 보면, 기본으로 CharField로 생성되어 있지만, 이를 ImageField로 반드시 바꿔줘야 합니다. 그래야 파일 첨부가 됩니다. upload_to 의 경우는 저장 경로를 설정하는 부분이므로, 가장 무난하게 날짜 포맷으로 써주시면 됩니다.
+
+ 
+
+timezone을 import하는 이유는 creation_date의 값을 현재시간(timezone.now)으로 하기 위함입니다. timezone을 안쓰실 경우에는 import를 하지 않아도 됩니다.
+
+ 
+
+ 
+
+#### 4) imageapp/forms.py
+
+다음은 Form을 생성하겠습니다. forms.py 는 필수 생성 파일은 아니지만, 파일 다중 첨부를 위한 양식으로 표현해야 하기 때문에, forms.py에서 명시하는 것이 더욱 명확하므로, 아래와 같이 간단하게 file_field만 선언하겠습니다.
+
+ 
+{% highlight Python %}
+from django import forms
+
+class FileFieldForm(forms.Form):
+    file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+{% endhighlight %}
+
+
+#### 5) imageapp/views.py
+
+이제 뷰를 생성하겠습니다.
+
+ 
+{% highlight Python %}
+from django.shortcuts import render
+from django.template.context_processors import csrf
+from imageapp.models import *
+from imageapp.forms import FileFieldForm
+from django.views.generic.edit import FormView
+
+class UploadFileView(FormView):
+    form_class = FileFieldForm
+    template_name = 'upload_image.html'
+    success_url = '.'
+    
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        files = request.FILES.getlist('file_field')
+        if form.is_valid():
+            for f in files:
+                imgfile = TImages(image=f)
+                imgfile.save()
+            
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+        
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['imgdata'] = TImages.objects.all()
+        return context
+{% endhighlight %} 
+
+View에 대해서 간단히 설명하면 다음과 같습니다.
+
+ 
+
+FormView를 상속한 UploadFileView 에서 모든 동작이 이루어지도록 하였습니다.
+뒤의 템플릿에서도 확인되겠지만, UploadFileView 하나에서 모든 것이 처리됩니다. 즉 다중 이미지 첨부를 위해서 입력하는 페이지와 입력 처리 완료 후 보여주는 페이지 모두 동일합니다.
+그러므로 post() 메소드를 사용해서 폼 입력값을 전송했을 때 처리하는 부분도 나타내야 하지만, 처리 완료 후 첨부파일을 보여주는 부분도 같이 작성해야 하므로 get_context_data() 메소드도 같이 사용했습니다.
+ 
+
+#### 6) imageapp/urls.py
+
+위의 imageproj/urls.py와 당연히 다른 파일입니다. 위 urls.py는 프로젝트의 URL 설정 파일이고, 지금 나타낼 urls.py는 imageapp에 대한 앱 URL 설정 파일입니다. 이미지 업로드 처리 템플릿 주소만 구현할 것이므로 내용은 간단합니다.
+
+ 
