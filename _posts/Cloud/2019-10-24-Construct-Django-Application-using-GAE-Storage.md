@@ -647,6 +647,177 @@ FormView를 상속한 UploadFileView 에서 모든 동작이 이루어지도록 
 위의 imageproj/urls.py와 당연히 다른 파일입니다. 위 urls.py는 프로젝트의 URL 설정 파일이고, 지금 나타낼 urls.py는 imageapp에 대한 앱 URL 설정 파일입니다. 이미지 업로드 처리 템플릿 주소만 구현할 것이므로 내용은 간단합니다.
 
 
+Django 개발환경을 내부 IP주소로 실행한 후, 클라이언트 PC에서는 외부 IP 주소를 사용하면 위 언급된 것과 같이 내부/외부 IP가 연동되어 정상 실행이 가능합니다.
+
+ 
+
+이제 웹 브라우저를 열어서 접속하겠습니다.
+
+ 
+
+Image 업로드 화면입니다. 
+
+이제 여기에 이미지 3개를 동시 첨부한 후 업로드를 진행하겠습니다. 
+
+ 
+
+
+코드가 정상적으로 실행되면, DB에 파일이름이 들어가고, MEDIA 디렉토리에도 이미지 파일 3개가 정상적으로 업로드가 완료되었습니다. 업로드 완료된 파일은 바로 조회하도록 설계했으므로 아래와 같이 조회할 수 있습니다.
+
+ 
+
+
+첨부 이미지 3개는 모두 재사용 가능한 License 사진이므로 참고 바랍니다
+ 
+
+개발환경 테스트는 모두 완료되었으니, 이제 배포환경을 위한 설정으로 넘어가겠습니다.
+
+ 
+
+ 
+
+ 
+
+### 8. 배포환경 설정
+
+사실 1번~7번까지는 별 내용 없습니다. 이 부분만 놓고 보면 인터넷에 있는 다른 유사 문서를 통해서도 나타나 있는 부분이고, 단순히 Compute Engine에서 Django 애플리케이션 설정 및 테스트했다 이게 전부니까요.
+
+ 
+
+아마 제 글을 검색해서 들어오신 분들이 가장 관심이 갈만한 요소는 지금 시작되는 8번부터의 내용이 아닐까. 그렇게 생각됩니다. 사실 저도 여기서부터 쓸 내용 때문에 이 글을 쓰게 된 것이고, Github에 프로젝트로 올리기까지 한 것이고요.
+
+ 
+
+ 
+
+먼저 배포환경과 개발환경의 차이점부터 쓰겠습니다.
+
+ 
+
+클라우드 서비스에서의 Django 배포 환경은 웹 애플리케이션 서버와 파일 스토리지를 필요로 합니다.
+
+그래서 이 글의 제목도 'Googla App Engine / Storage를 사용한' 이라고 언급했고요.
+
+ 
+
+즉, 배포환경에서는 웹 애플리케이션 서버 및 스토리지 설정 및 연동이 가장 중요합니다.
+
+ 
+
+이에 따라 달라지는 환경 설정 요소가 몇몇 존재하며, Google App Engine, Google Cloud Storage를 기준으로 환경 설정할 요소를 다음과 같이 나타내겠습니다. (서비스 제조사에 따라 구성 환경 요소가 약간씩 다르니 참고 바랍니다)
+
+ 
+
+STATIC, MEDIA 파일 저장을 위한 Storage 지정 및 권한 설정
+Google App Engine 배포에 사용되는 파일 준비
+이렇게 두 가지 정도로 요약할 수 있으며, 각각에 대해서 기술하겠습니다.
+
+ 
+
+ 
+
+### 9. Storage 지정 및 권한 설정
+#### 1) imageproj/settings.py
+먼저 권한 설정을 위한 패키지부터 불러오겠습니다.
+
+ 
+
+{% highlight Python %}
+import os
+from google.oauth2 import service_account
+{% endhighlight %} 
+
+
+import os는 원래 있던 코드입니다.
+
+아래에 from google.oauth2 import service_account만 추가하면 됩니다.
+
+이 패키지를 사용해야 Storage에 파일을 저장하기 위한 권한을 설정할 수 있습니다.
+
+ 
+
+ 
+
+배포할 때에는 DEBUG는 False로 지정하는 것이 기본이겠죠. 사실 이 부분은 Storage 보다는 App Engine 배포에 사용되는 설정이지만, settings.py 파일 변경을 진행해야 하므로 같이 하겠습니다.
+
+ 
+
+{% highlight Python %}
+DEBUG = False
+{% endhighlight %} 
+ 
+
+다음은 MEDIA, STATIC 파일 설정입니다. 위에서 지정했던 부분은 모두 주석처리하고 아래와 같이 입력해주시면 됩니다.
+
+ 
+{% highlight Python %}
+# Development Env Variable
+#STATIC_URL = '/static/'
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = 'media'
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    "secrets/bucket-admin.json"
+)
+DEFAULT_FILE_STORAGE = 'config.storage_backends.GoogleCloudMediaStorage'
+STATICFILES_STORAGE = 'config.storage_backends.GoogleCloudStaticStorage'
+GS_PROJECT_ID = '<google cloud project id>'
+GS_MEDIA_BUCKET_NAME = '<media bucket name>'
+GS_STATIC_BUCKET_NAME = '<static bucket name>'
+STATIC_URL = 'https://storage.googleapis.com/{}/'.format(GS_STATIC_BUCKET_NAME)
+MEDIA_URL = 'https://storage.googleapis.com/{}/'.format(GS_MEDIA_BUCKET_NAME)
+{% endhighlight %}
+
+요약하자면, MEDIA, STATIC 파일이 어느 Storage에 연결되고, 어느 Bucket을 사용할 것인지를 지정하는 것으로 보시면 됩니다. 그리고 Storage 접근 시 어떤 권한을 가지고 접근할 것인가도 같이 명시되어 있습니다. 
+
+GS_CREDENTIALS는 Storage 접근을 위한 권한에 사용되는 환경변수이며, 그 외의 환경 변수는 Storage 저장을 위한 위치를 나타내는 변수입니다. 
+
+
+ 
+ 
+
+Media/Static 파일 버킷은 각각 다른 버킷으로 설정하는 것이 좋습니다. Static 파일은 읽기 전용으로 관리되어야 하는 반면, Media 파일은 첨부파일 저장을 위해서 읽기/쓰기로 관리되는 것이 최적이기 때문입니다. Google Cloud Storage의 버킷 권한 설정은 버킷 단위로 할당되는 것이 일반적이므로, 역시 각각의 버킷으로 구성하는 것이 좋습니다.
+
+ 
+
+이제 여기서 추가로 생성해야 할 파일이 두 개 있습니다. 
+
+ 
+
+첫 번째는 storage_backends.py 파일입니다. 
+
+DEFAULT_FILE_STORAGE, STATICFILES_STORAGE 변수의 값이 어떤 스토리지를 사용할 것인가를 나타내는 부분인데, 위 값에 의하면 config/storage_backends.py 파일의 GoogleCLoudMediaStorage / GoogleCloudStaticStorage 클래스에서 지정하기 때문입니다. 물론 storage_backends.py 경로나 파일이름은 자유롭게 변경할 수 있되, 변경하더라도 위 설정 값과 일치해야 하는 점 참고 바랍니다.
+
+ 
+
+두 번째는 bucket-admin.json 파일입니다. 
+
+이 파일은 앞서 언급했듯이 Storage 접근 권한을 위한 파일이며, GS_CREDENTIALS 변수에서 선언한 내용의 파일에서 권한을 관리하기 때문입니다.
+
+ 
+
+그럼 각 파일 설정부분도 다루도록 하겠습니다.
+
+ 
+
+ 
+
+#### 2) config/__init__.py
+
+Django에서 신규 디렉토리를 생성하고 해당 디렉토리 내 Python 파일을 사용할 경우에는 기본적으로 해야 할 절차가 있습니다. 그것은 바로 __init__.py 파일 생성인데요. 이 파일이 있어야 특정 디렉토리의 파일 클래스를 가지고 와서 사용할 수 있습니다.
+
+ 
+
+config/__init__.py 파일은 생성만 하고 내용은 아무것도 입력하지 않습니다. 파일이 존재하는 것만으로도 제 역할을 다 한 것입니다.
+
+ 
+
+ 
+
+#### 3) config/storage_backends.py
+
+이제 스토리지 지정을 위한 파일을 생성합니다. 파일 내용은 위의 참고 문서 중 하나인 Tariq Al-Sadoon 블로그의 내용으로 하겠습니다.
+
 <https://medium.com/swlh/preparing-your-django-application-for-google-cloud-run-7c8cb7b7464b>
 
  
