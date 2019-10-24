@@ -646,6 +646,45 @@ FormView를 상속한 UploadFileView 에서 모든 동작이 이루어지도록 
 
 위의 imageproj/urls.py와 당연히 다른 파일입니다. 위 urls.py는 프로젝트의 URL 설정 파일이고, 지금 나타낼 urls.py는 imageapp에 대한 앱 URL 설정 파일입니다. 이미지 업로드 처리 템플릿 주소만 구현할 것이므로 내용은 간단합니다.
 
+{% highlight Python %}
+from django.urls import path
+from imageapp.views import *
+
+urlpatterns = [
+    path('upload_image/', UploadFileView.as_view()),
+] 
+{% endhighlight %}
+
+#### 7) imageapp/templates/upload_file.html
+
+템플릿도 같이 구현하겠습니다.
+
+ 
+{% highlight HTML %}
+<html>
+<head>
+        <title>Upload Image</title>
+        {% load static %}<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+</head>
+<body>
+        <form method="POST" enctype="multipart/form-data" name="imgform">
+        {% csrf_token %}
+        {{ form }}
+        <button name="choide" value="{{form.value}}">File Upload</button>
+        </form>
+    <p>
+    {% for img in imgdata %}
+        <img src="{{ img.image.url }}"/>
+    {% endfor %}
+    </p>    
+</body>
+</html>
+{% endhighlight %}
+
+위 코드에서는 Django Template Language를 사용해서 Form 및 첨부파일 데이터를 표현하는 부분이 있다는 것 정도만 참고하시면 됩니다. 다만 중간에 부족하다고 느껴지는 부분이 있을 것 같아서 부연 설명도 같이 하겠습니다.
+
+ 
+
 먼저 사실 위 코드에서는 jQuery를 사용할 일이 전혀 없습니다. 하지만 말 그대로 예제 코드이므로 같이 넣었습니다.
 
 
