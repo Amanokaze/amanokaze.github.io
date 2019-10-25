@@ -164,7 +164,7 @@ Key 파일 권한 설정 방법은 다음과 같습니다. 탐색기에서 해�
 
 ![No Inheritance]({{ '/assets/img/img014_18.png' | prepend: site.baseurl }})
 
-하단의 '상속 사용 안합'을 눌러줍니다. 이걸 눌러야 권한 변경이 가능합니다. 누르면 다음과 같은 창이 나옵니다.
+하단의 '상속 사용 안함'을 눌러줍니다. 이걸 눌러야 권한 변경이 가능합니다. 누르면 다음과 같은 창이 나옵니다.
 
 ![No Inheritance 2]({{ '/assets/img/img014_19.png' | prepend: site.baseurl }})
 
