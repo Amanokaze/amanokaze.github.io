@@ -31,7 +31,7 @@ tags: [Python, 파이썬, Python37, Google, Cloud, Django, 장고, MySQL, SQL, �
 
 Sagemaker는 이미 한 번 언급한 바 있었습니다만, 다시 한번 소개하자면 머신러닝(Machine Learning) 서비스에 대한 모델을 구축하고 이와 관련된 교육 및 API를 제공하는 서비스로 볼 수 있습니다.
 
-![Amazon Sagemaker]({{ '/assets/img/img012_01.png' | prepend: site.baseurl }})
+![Amazon Sagemaker]({{ '/assets/img/img012_02.png' | prepend: site.baseurl }})
  
 
 우리가 머신러닝이라는 것을 처음 접하거나 교육할때 주로 무엇을 해보려고 하죠?
