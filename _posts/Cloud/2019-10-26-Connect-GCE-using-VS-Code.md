@@ -76,7 +76,7 @@ Conversions - Export OpenSSH Key 메뉴로 이동해주시기 바랍니다.
 
 바로 위에서는 Puttygen에서 생성한 키의 Public Key를 Ctrl + C 해서 복사했습니다. 이제 이 값을 GCE에 등록하겠습니다. 
 
-Google Cloud Console에 접속하신 후, GCE를 선택한 후 세부 메뉴를 보면 다음 항목이 있습니다.
+Google Cloud Console에 접속하신 후, GCE를 선택한 후 세부 메뉴를 보면 Metadata 항목이 있습니다.
 
 ![Metadata Menu]({{ '/assets/img/img014_08.png' | prepend: site.baseurl }})
 
