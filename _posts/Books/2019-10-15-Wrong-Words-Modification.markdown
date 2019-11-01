@@ -26,7 +26,7 @@ $ virtualenv --verision
 <ul>
 	<li>169P: set variables → show variables</li>
 	<li>181P: 테이블 선언 부분의 컬럼명을 감싸는 기호가 Grave(`) 기호를 사용해야 하는데 Apostrophe(') 기호가 들어갔습니다. 이 부분 주의 바라겠습니다.</li>
-	<li>181P: boards 테이블 생성에서 이름 표기가 잘못된 부분도 같이 확인했습니다. 수정된 부분은 'category_id'와 'user_id' 위치를 바꾸었으며, 다음과 같이 수정하겠습니다.
+	<li>181P: boards 테이블 생성에서 이름 표기가 잘못된 부분도 같이 확인했습니다. 수정된 부분은 'category_id'와 'user_id' 위치를 바꾸었으며, 다음과 같이 수정하겠습니다.</li>
 </ul>
 
 {% highlight SQL %}
@@ -47,7 +47,7 @@ create table `boards` (
 {% endhighlight %}
 
 <ul>
-	<li>241P: AuthUser 모델 클래스의 필드에서 사용자 정의 필드가 있는 것이 확인되었습니다. 사용자 정의 필드는 PART 3에서 추가되지만, PART 2에서는 추가가 안 된 상태로 그대로 표시하는 것이 맞으므로 해당 부분을 삭제해서 다음과 같이 나타내겠습니다.
+	<li>241P: AuthUser 모델 클래스의 필드에서 사용자 정의 필드가 있는 것이 확인되었습니다. 사용자 정의 필드는 PART 3에서 추가되지만, PART 2에서는 추가가 안 된 상태로 그대로 표시하는 것이 맞으므로 해당 부분을 삭제해서 다음과 같이 나타내겠습니다.</li>
 </ul>
 
 {% highlight SQL %}
