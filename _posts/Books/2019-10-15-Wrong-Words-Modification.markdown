@@ -50,7 +50,7 @@ create table `boards` (
 	<li>241P: AuthUser 모델 클래스의 필드에서 사용자 정의 필드가 있는 것이 확인되었습니다. 사용자 정의 필드는 PART 3에서 추가되지만, PART 2에서는 추가가 안 된 상태로 그대로 표시하는 것이 맞으므로 해당 부분을 삭제해서 다음과 같이 나타내겠습니다.</li>
 </ul>
 
-{% highlight SQL %}
+{% highlight Python %}
 03: class AuthUser(models.Model):
 04: 	password = models.CharField(max_length=128)
 05: 	last_login = models.DateTimeField(blank=True, null=True)
