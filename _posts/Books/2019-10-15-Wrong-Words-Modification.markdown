@@ -52,20 +52,20 @@ create table `boards` (
 
 {% highlight SQL %}
 03: class AuthUser(models.Model):
-04: password = models.CharField(max_length=128)
-05: last_login = models.DateTimeField(blank=True, null=True)
-06: is_superuser = models.IntegerField()
-07: username = models.CharField(unique=True, max_length=150)
-08: first_name = models.CharField(max_length=30, blank=True, null=True)
-09: last_name = models.CharField(max_length=150)
-10: email = models.CharField(max_length=254)
-11: is_staff = models.IntegerField(blank=True, null=True)
-12: is_active = models.IntegerField(blank=True, null=True)
-13: date_joined = models.DateTimeField()
+04: 	password = models.CharField(max_length=128)
+05: 	last_login = models.DateTimeField(blank=True, null=True)
+06: 	is_superuser = models.IntegerField()
+07: 	username = models.CharField(unique=True, max_length=150)
+08: 	first_name = models.CharField(max_length=30, blank=True, null=True)
+09: 	last_name = models.CharField(max_length=150)
+10: 	email = models.CharField(max_length=254)
+11: 	is_staff = models.IntegerField(blank=True, null=True)
+12: 	is_active = models.IntegerField(blank=True, null=True)
+13: 	date_joined = models.DateTimeField()
 14:
-15: class Meta:
-16: managed = False
-17: db_table = 'auth_user'
+15: 	class Meta:
+16: 		managed = False
+17: 		db_table = 'auth_user'
 {% endhighlight %}
 
 <ul>
