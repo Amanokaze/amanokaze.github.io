@@ -91,34 +91,7 @@ Vision API는 사실 이미지에서 텍스트를 추출하기 위한 전용 기
 
 * Pytesseract 추출 결과
 
-{% highlight %}
-pytesseract.pytesseract.TesseractError: (-11, "read_params_file: Can't open txt read_params_file: Can't open txt Tesseract Open Source OCR Engine v4.0.0-beta.1 with Leptonica Warning. Invalid resolution 0 dpi. Using 70 instead. Estimating resolution as 245 contains_unichar_id(unichar_id):Error:Assert failed:in file ../ccutil/unicharset.h, line 513")
-{% endhighlight %}
 
-에러가 발생하네요. 뭔가 아쉽습니다.
-
-
-##### 세 번째 이미지 추출 예제
-
-![Example Image 3]({{ '/assets/img/img015_04.jpg' | prepend: site.baseurl }})
-
-출처는 Yahoo.com 메인화면 이미지 캡쳐한 내용입니다.
-
-* Google API 추출 결과
-
-{% highlight %}
-Leaked video reveals\npressure killed Epstein\nstory\nIn a leaked video released Tuesday, ABC News\nanchor Amy Robach said the network killed her\nstory on wealthy pedophile Jeffrey Epstein\nunder pressure from the British royal family.\n'It was unbelievable what we had' >>\n5914 people reacting
-{% endhighlight %}
-
-한글보다는 영어가 아무래도 깔끔하게 추출되는 것으로 볼 수 있습니다. 검출 결과도 깔끔합니다.
-
-* Pytesseract 추출 결과
-
-{% highlight %}
-Leaked video reveals\npressure Kkilled Epstein\ntu\n\nlnaigxdvMavilenwd dm﹒A9Caw 내\n松 내\n志\numimpmaausiuniuspnhhiaiamy\nL t 알 애\n\n| 배
-{% endhighlight %}
-
-상당히 아쉬운 결과로 추출이 된 것을 확인할 수 있습니다. 아무래도 많은 보완이 필요할 것 같아 보이네요.
 
 
 이상 Vision API와 Tesseract-OCR을 Python 언어 기반에서 수행한 테스트를 마치겠습니다.
