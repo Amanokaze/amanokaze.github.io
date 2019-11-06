@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "오타 수정 예정 안내"
-date:   2019-11-01
+date:   2019-11-06
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
@@ -71,5 +71,14 @@ create table `boards` (
 <ul>
 	<li>243P: views.py의 7Line - template_file → template_name</li>
 	<li>245P: testapp/templates/boardsfunctionview.html → testapp/templates/boards_list_fbv.html</li>
+	<li>295P: board_images 테이블은 존재하지 않는 테이블입니다. 집필 중간 과정에서 생성했다가 빼기로 한 테이블인데 해당 부분 내용이 남아있었던 점 양해 바랍니다. 코드는 아래와 같이 수정되니 참고 바라며, 첨부 이미지는 빼도록 하겠습니다.<br>그리고 이와 관련하여 추가로 입력할 내용이 있습니다. 이 부분은 별도 게시물에서 다루겠습니다.</li>
+</ul>
+
+{% highlight Shell %}
+(ve)$ python manage.py inspectdb board_categories boards board_replies board_
+likes >> boardapp/models.py
+{% endhighlight %}
+
+<ul>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 </ul>
