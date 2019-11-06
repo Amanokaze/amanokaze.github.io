@@ -59,7 +59,7 @@ Vision API는 사실 이미지에서 텍스트를 추출하기 위한 전용 기
 * 먼저 Google API로 추출한 결과입니다.
 
 {% highlight %}
-평원의 먹이사슬에서 높은 위치를 차지한 동물입니다. 강한\n턱 힘으로 위협이 되는 대상을 사정없이 물어뜯습니다. 이
+평원의 먹이사슬에서 높은 위치를 차지한 동물입니다. 강한턱 힘으로 위협이 되는 대상을 사정없이 물어뜯습니다. 이
 {% endhighlight %}
 
 완벽하게 추출한 것 같지만 뭔가 옥의 티가 있죠? 맨 끝에 "이"라는 글자가 추출된 것으로 보아 사족이 들어간 듯 싶습니다.
@@ -67,7 +67,7 @@ Vision API는 사실 이미지에서 텍스트를 추출하기 위한 전용 기
 * 다음은 Pytesseract (Tesseract-OCR의 Python Library)로 추출한 결과입니다.
 
 {% highlight %}
-평 원 의 먹 이 사 슬 에 서 높 은 위 치 를 차 지 한 동 물 입 니 다 . 강 한\n턱 힘 으 로 위 협 이 되 는 대 상 을 사 정 없 이 물 어 뜰 습 니 다 .
+평 원 의 먹 이 사 슬 에 서 높 은 위 치 를 차 지 한 동 물 입 니 다 . 강 한턱 힘 으 로 위 협 이 되 는 대 상 을 사 정 없 이 물 어 뜰 습 니 다 .
 {% endhighlight %}
 
 정말 정직하게 추출됩니다. 
@@ -82,6 +82,41 @@ Vision API는 사실 이미지에서 텍스트를 추출하기 위한 전용 기
 출처는 뉴스 기사의 이미지입니다.
 
 * Google API 추출 결과
+
+{% highlight %}
+06:07 (수)9 \'프로듀스X 101\' 제작진 2명 구속국제복면금지법 한 달 홍콩 가면 시위…공무원들도 \'폭력 경찰 규탄진주106207 (수)MBCNEWSTODAY국제이란 "포르도 우라늄 농축시설 가동"….EU, \'핵 합의 이행 축소\'에 우려대구6MBC| 06:08 (수)NEWSTODAY2경찰, 사기와 업무방해·배임 혐의 적용스포츠동해106
+{% endhighlight %}
+
+부분 부분 추출을 한 것을 알 수 있습니다. 100% 완벽한 검출은 아니지만 어느 정도의 신뢰도는 높은 것으로 확인됩니다.
+
+* Pytesseract 추출 결과
+
+{% highlight %}
+pytesseract.pytesseract.TesseractError: (-11, "read_params_file: Can't open txt read_params_file: Can't open txt Tesseract Open Source OCR Engine v4.0.0-beta.1 with Leptonica Warning. Invalid resolution 0 dpi. Using 70 instead. Estimating resolution as 245 contains_unichar_id(unichar_id):Error:Assert failed:in file ../ccutil/unicharset.h, line 513")
+{% endhighlight %}
+
+에러가 발생하네요. 뭔가 아쉽습니다.
+
+
+##### 세 번째 이미지 추출 예제
+
+![Example Image 3]({{ '/assets/img/img015_04.jpg' | prepend: site.baseurl }})
+
+출처는 Yahoo.com 메인화면 이미지 캡쳐한 내용입니다.
+
+* Google API 추출 결과
+
+{% highlight %}
+Leaked video revealspressure killed EpsteinstoryIn a leaked video released Tuesday, ABC Newsanchor Amy Robach said the network killed herstory on wealthy pedophile Jeffrey Epsteinunder pressure from the British royal family.'It was unbelievable what we had' >>5914 people reacting
+{% endhighlight %}
+
+한글보다는 영어가 아무래도 깔끔하게 추출되는 것으로 볼 수 있습니다. 검출 결과도 깔끔합니다.
+
+* Pytesseract 추출 결과
+
+{% highlight %}
+Leaked video revealspressure Kkilled EpsteintulnaigxdvMavilenwd dm﹒A9Caw 내松 내志umimpmaausiuniuspnhhiaiamyL t 알 애| 배
+{% endhighlight %}
 
 상당히 아쉬운 결과로 추출이 된 것을 확인할 수 있습니다. 아무래도 많은 보완이 필요할 것 같아 보이네요.
 
