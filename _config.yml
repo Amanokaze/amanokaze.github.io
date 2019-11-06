@@ -5,6 +5,7 @@ url: https://amanokaze.github.io
 baseurl: ""
 paginate_path: "blog/page:num/"
 permalink: blog/:title/
+encoding: UTF-8
 
 markdown: kramdown
 highlighter: rouge
