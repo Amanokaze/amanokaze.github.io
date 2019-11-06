@@ -58,33 +58,9 @@ Vision API는 사실 이미지에서 텍스트를 추출하기 위한 전용 기
 
 * 먼저 Google API로 추출한 결과입니다.
 
-{% highlight %}
+{% highlight Shell %}
 평원의 먹이사슬에서 높은 위치를 차지한 동물입니다. 강한턱 힘으로 위협이 되는 대상을 사정없이 물어뜯습니다. 이
 {% endhighlight %}
-
-완벽하게 추출한 것 같지만 뭔가 옥의 티가 있죠? 맨 끝에 "이"라는 글자가 추출된 것으로 보아 사족이 들어간 듯 싶습니다.
-
-* 다음은 Pytesseract (Tesseract-OCR의 Python Library)로 추출한 결과입니다.
-
-{% highlight %}
-평 원 의 먹 이 사 슬 에 서 높 은 위 치 를 차 지 한 동 물 입 니 다 . 강 한턱 힘 으 로 위 협 이 되 는 대 상 을 사 정 없 이 물 어 뜰 습 니 다 .
-{% endhighlight %}
-
-정말 정직하게 추출됩니다. 
-
-두 가지 모두 제대로 검출을 했지만, Tesseract는 띄워쓰기 추출은 안 된 것을 확인할 수 있습니다.
-
-
-##### 두 번째 이미지 추출 예제
-
-![Example Image 2]({{ '/assets/img/img015_02.jpg' | prepend: site.baseurl }})
-
-출처는 뉴스 기사의 이미지입니다.
-
-* Google API 추출 결과
-
-
-상당히 아쉬운 결과로 추출이 된 것을 확인할 수 있습니다. 아무래도 많은 보완이 필요할 것 같아 보이네요.
 
 
 이상 Vision API와 Tesseract-OCR을 Python 언어 기반에서 수행한 테스트를 마치겠습니다.
