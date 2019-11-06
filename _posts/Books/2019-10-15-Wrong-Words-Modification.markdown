@@ -6,7 +6,7 @@ categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
 
-#### ※ 최근 수정일: 2019-11-01
+#### ※ 최근 수정일: 2019-11-06
 
 서적 1판1쇄에서 현재까지 나타난 오타 안내입니다.
 
@@ -75,8 +75,7 @@ create table `boards` (
 </ul>
 
 {% highlight Shell %}
-(ve)$ python manage.py inspectdb board_categories boards board_replies board_
-likes >> boardapp/models.py
+(ve)$ python manage.py inspectdb board_categories boards board_replies board_likes >> boardapp/models.py
 {% endhighlight %}
 
 <ul>
