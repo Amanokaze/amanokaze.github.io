@@ -22,7 +22,7 @@ tags: [Python, 파이썬, Amazon, AWS, Sagemaker, Jupyter, Notebook, Jupyterlab,
 
  
 
-[앞서 작성했던 글](https://onikaze.tistory.com/633)과 같이, Sagemaker에서는 Amazon에서 제공하는 다양한 머신러닝 알고리즘이 있습니다. 그 중에서도 아래 화면의 네 번째인 ‘Image-classification-fulltraining.ipynb’ 파일을 사용하는 것으로 하겠습니다.
+[앞서 작성했던 글](https://amanokaze.github.io/blog/Create-Amazon-Sagemaker-Notebook-Instance/)과 같이, Sagemaker에서는 Amazon에서 제공하는 다양한 머신러닝 알고리즘이 있습니다. 그 중에서도 아래 화면의 네 번째인 ‘Image-classification-fulltraining.ipynb’ 파일을 사용하는 것으로 하겠습니다.
 
 ![Image Classification Fulltraining]({{ '/assets/img/img011_02.png' | prepend: site.baseurl }})
 
