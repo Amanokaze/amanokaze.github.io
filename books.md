@@ -30,7 +30,7 @@ title: Books
 	<li><a href="/blog/Using-HTTPS-in-Elastic-Beanstalk/">AWS Elastic Beanstalk에서 HTTPS 사용하기</a></li>
 	<li><a href="/blog/PIP-Installation-in-EC2-Instance/">AWS EC2 인스턴스에서 PIP 설치하기</a></li>
 	<li><a href="/blog/Way-to-See-Django-Development-Env-Using-Browser-in-EC2-Instance/">EC2 인스턴스의 Django 개발환경을 웹브라우저에서 조회하는 방법</a></li>
-	<li><a href="/blog/Customize-Model-Field/">Django InspectDB 사용 후 날짜 필드를 현재 시간으로 수정하는 방법</li>
+	<li><a href="/blog/Customize-Model-Field/">Django InspectDB 사용 후 날짜 필드를 현재 시간으로 수정하는 방법</a></li>
 </ul>
 <h3>참고사항</h3>
 <p>Part 3의 예제 홈페이지(http://www.awsdjangoboard.com)는 더이상 운영하지 않습니다. 프리티어 사용 기간이 지나서 월 $28~$80 사이의 비용을 지불해야 하기 때문에 더 이상 운영이 어렵다 판단하였으니 양해 바랍니다.</p>
