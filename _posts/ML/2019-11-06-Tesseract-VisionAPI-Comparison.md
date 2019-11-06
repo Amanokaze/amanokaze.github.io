@@ -2,7 +2,7 @@
 layout: post
 title:  "이미지 텍스트 추출 API 비교 - Tesseract vs Google Vision API"
 date:   2019-11-06
-image: '/assets/img/img011_01.png'
+image: '/assets/img/img015_01.png'
 categories: [ML]
 tags: [Python, 파이썬, Amazon, AWS, 이미지, 텍스트, 추출, 비교, Comparison, Tesseract, Google, Vision, API, 구글, 비전, 테서렉트, Image, Text, Txt, Document, OCR]
 ---
@@ -100,7 +100,7 @@ pytesseract.pytesseract.TesseractError: (-11, "read_params_file: Can't open txt 
 
 #### 세 번째 이미지 추출 예제
 
-![Example Image 3]({{ '/assets/img/img015_04.jpg' | prepend: site.baseurl }})
+![Example Image 3]({{ '/assets/img/img015_04.png' | prepend: site.baseurl }})
 
 출처는 Yahoo.com 메인화면 이미지 캡쳐한 내용입니다.
 
