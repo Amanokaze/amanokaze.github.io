@@ -98,26 +98,6 @@ pytesseract.pytesseract.TesseractError: (-11, "read_params_file: Can't open txt 
 에러가 발생하네요. 뭔가 아쉽습니다.
 
 
-##### 세 번째 이미지 추출 예제
-
-![Example Image 3]({{ '/assets/img/img015_04.jpg' | prepend: site.baseurl }})
-
-출처는 Yahoo.com 메인화면 이미지 캡쳐한 내용입니다.
-
-* Google API 추출 결과
-
-{% highlight %}
-Leaked video revealspressure killed EpsteinstoryIn a leaked video released Tuesday, ABC Newsanchor Amy Robach said the network killed herstory on wealthy pedophile Jeffrey Epsteinunder pressure from the British royal family.'It was unbelievable what we had' >>5914 people reacting
-{% endhighlight %}
-
-한글보다는 영어가 아무래도 깔끔하게 추출되는 것으로 볼 수 있습니다. 검출 결과도 깔끔합니다.
-
-* Pytesseract 추출 결과
-
-{% highlight %}
-Leaked video revealspressure Kkilled EpsteintulnaigxdvMavilenwd dm﹒A9Caw 내松 내志umimpmaausiuniuspnhhiaiamyL t 알 애| 배
-{% endhighlight %}
-
 상당히 아쉬운 결과로 추출이 된 것을 확인할 수 있습니다. 아무래도 많은 보완이 필요할 것 같아 보이네요.
 
 
