@@ -12,13 +12,13 @@ tags: [Python, 파이썬, Amazon, AWS, 이미지, 텍스트, 추출, 비교, Com
 이번에 쓸 글은 이미지에서 텍스트를 추출하는 기술인 OCR(Optical Character Recognition) API로 사용되는 Tesseract-OCR과 Google Vision API를 간단히 비교하는 글을 쓰겠습니다.
 
 
-#### Tesseract-OCR
+### Tesseract-OCR
 
 먼저 Tesseract-OCR은 OCR API 중 오픈소스(Open Source)로 가장 유명한 API입니다. 그에 비해 Google Vision API는 딥러닝(Deep Learning) 기술을 이용해서 텍스트 추출에 대한 학습을 하여 최적의 텍스트 추출을 위한 기능을 제공하고 있습니다.
 
 Tesseract-OCR은 C, C++ 언어로 제작된 API이기 때문에, 호환되는 다른 프로그래밍 언어에서 작업하더라도 최소한 gcc 등의 C Complier는 반드시 설치되어 있어야 하며, C++, Python, Java 등 다양한 언어를 통해서 사용 가능합니다.
 
-#### Google Vision API
+### Google Vision API
 
 Google Vision API는 Google Cloud에서 제공하는 서비스 중 하나로, API를 사용할 때마다 일정 요금이 부과되는 서비스입니다. 물론 Google Cloud를 최초에 가입할 경우에는 무료 Credit을 부여하기 때문에 일정 기간 또는 용량 범위 내에서는 무료로 사용이 가능합니다. 저 또한 이러한 무료 Credit을 통해서 Vision API를 사용하고 있고요.
 
@@ -45,11 +45,11 @@ Vision API는 사실 이미지에서 텍스트를 추출하기 위한 전용 기
 두 가지 다 오픈소스로 개발되었기 때문에 Github에 가면 각각 관련된 자료를 받을 수 있지만, 이 부분은 그냥 참고 정도로만 알아두시면 될 것 같고요. 과연 두 가지 API를 사용했을 때 어떤 결과로 텍스트를 추출하는 지를 궁금해 할 수 있으므로 이에 대한 결과만 간단히 보여드리도록 하겠습니다.
 
 
-#### Text 추출
+### Text 추출
 
 앞서 언급한 두 가지 OCR API 설치 방법은 생략하겠습니다. 설치 및 설정하는 방법까지 다루려면 별도의 글에서 다루는 것이 맞을 것 같으므로 양해 바랍니다. 필요하다면 별도의 글로 추가로 올리도록 하겠습니다. 그러므로 이 게시물에서는 모두 설치되어 있다는 것을 전제로 하겠습니다.
 
-##### 첫 번째 이미지 추출 예제
+#### 첫 번째 이미지 추출 예제
 
 ![Example Image]({{ '/assets/img/img015_01.png' | prepend: site.baseurl }})
 
@@ -75,7 +75,7 @@ Vision API는 사실 이미지에서 텍스트를 추출하기 위한 전용 기
 두 가지 모두 제대로 검출을 했지만, Tesseract는 띄워쓰기 추출은 안 된 것을 확인할 수 있습니다.
 
 
-##### 두 번째 이미지 추출 예제
+#### 두 번째 이미지 추출 예제
 
 ![Example Image 2]({{ '/assets/img/img015_02.jpg' | prepend: site.baseurl }})
 
@@ -98,7 +98,7 @@ pytesseract.pytesseract.TesseractError: (-11, "read_params_file: Can't open txt 
 에러가 발생하네요. 뭔가 아쉽습니다.
 
 
-##### 세 번째 이미지 추출 예제
+#### 세 번째 이미지 추출 예제
 
 ![Example Image 3]({{ '/assets/img/img015_04.jpg' | prepend: site.baseurl }})
 
