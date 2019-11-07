@@ -6,7 +6,7 @@ categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
 
-#### ※ 최근 수정일: 2019-11-06
+#### ※ 최근 수정일: 2019-11-07
 
 서적 1판1쇄에서 현재까지 나타난 오타 안내입니다.
 
@@ -79,6 +79,6 @@ create table `boards` (
 {% endhighlight %}
 
 <ul>
-	<li>316P: 위쪽 코드의 5Line 부분의 id="email_id" id="email_id"로 중복으로 들어갔습니다. 하나를 빼겠습니다. Github 소스코드도 확인결과 중복으로 들어간 것으로 확인되어 수정하였으니 참고 바랍니다.
+	<li>316P: 위쪽 코드의 5Line 부분의 id="email_id" id="email_id"로 중복으로 들어갔습니다. 하나를 빼겠습니다. Github 소스코드도 확인결과 중복으로 들어간 것으로 확인되어 수정하였으니 참고 바랍니다.</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 </ul>
