@@ -80,6 +80,7 @@ create table `boards` (
 
 <ul>
 	<li>316P: 위쪽 코드의 5Line 부분의 id="email_id" id="email_id"로 중복으로 들어갔습니다. 하나를 빼겠습니다. Github 소스코드도 확인결과 중복으로 들어간 것으로 확인되어 수정하였으니 참고 바랍니다.</li>
+	<li>327P: 코드의 1 Line에 request → redirect로 정정</li>
 	<li>332P: 코드의 41 Line에 </h5>로 끝나는 태그가 있습니다만, </h4>로 변경해야 합니다. Github Source Code에도 똑같이 변경사항 반영했습니다.</li>
 	<li>341P: boardapp/static/boardapp/assets/suser.js → user.js 로 파일명 변경합니다. 단순 오타입니다.</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
