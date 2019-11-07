@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "오타 수정 예정 안내"
-date:   2019-11-06
+date:   2019-11-07
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
@@ -79,5 +79,6 @@ create table `boards` (
 {% endhighlight %}
 
 <ul>
+	<li>316P: 위쪽 코드의 5Line 부분의 id="email_id" id="email_id"로 중복으로 들어갔습니다. 하나를 빼겠습니다. Github 소스코드도 확인결과 중복으로 들어간 것으로 확인되어 수정하였으니 참고 바랍니다.
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 </ul>
