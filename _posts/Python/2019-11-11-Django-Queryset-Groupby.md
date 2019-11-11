@@ -31,7 +31,7 @@ Django 공식 문서에서는 Group by 와 관련하여 다음과 같이 내용�
 
 이런 테이블이 있다고 가정합시다.
 
-**** Table: TB
+#### Table: TB
 
 | id | collection_id | category_seq |
 |:---:|:---:|:---:|
