@@ -12,6 +12,8 @@ Django Framework로 웹페이지를 개발할 경우, DB Table의 값을 가져�
 
 Django 공식 문서에서는 Group by 와 관련하여 다음과 같이 내용을 다루고 있습니다.
 
+<https://docs.djangoproject.com/en/2.2/ref/models/querysets/>
+
 <b>An aggregate within a values() clause is applied before other arguments within the same values() clause. If you need to group by another value, add it to an earlier values() clause instead. For example:</b>
 
 {% highlight Python %}
