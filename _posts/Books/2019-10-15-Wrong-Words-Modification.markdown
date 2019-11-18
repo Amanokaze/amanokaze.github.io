@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "오타 수정 예정 안내"
-date:   2019-11-07
+date:   2019-11-18
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
 
-#### ※ 최근 수정일: 2019-11-07
+#### ※ 최근 수정일: 2019-11-18
 
 서적 1판1쇄에서 현재까지 나타난 오타 안내입니다.
 
@@ -83,5 +83,6 @@ create table `boards` (
 	<li>327P: 코드의 1 Line에 request → redirect로 정정</li>
 	<li>332P: 코드의 41 Line에 </h5>로 끝나는 태그가 있습니다만, </h4>로 변경해야 합니다. Github Source Code에도 똑같이 변경사항 반영했습니다.</li>
 	<li>341P: boardapp/static/boardapp/assets/suser.js → user.js 로 파일명 변경합니다. 단순 오타입니다.</li>
+	<li>409, 410P: 소스코드 부분의 board_comm_list.html → board_comm_view.html로 정정합니다.</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 </ul>
