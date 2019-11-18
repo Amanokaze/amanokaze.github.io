@@ -29,7 +29,7 @@ image_qs 변수에서는 ImageTable의 값을 가져오는 구문이 포함되�
 
 그렇다면 어떻게 해결해야 할까요. 방법은 간단합니다.
 
-<b>SubQuery가 포함된 View를 만드세요.</b>
+<b>DB에서 SubQuery가 포함된 View를 만드세요.</b>
 
 현재 Django에서는 그것 외에는 별다른 표현방법이 없지 싶습니다.
 
