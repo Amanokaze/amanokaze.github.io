@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Jekyll Plugin & Github Pages 호환 문제"
+title:  "Jekyll-Polyglot 다국어 지원 & Github Pages 호환 문제"
 date:   2019-11-22
 categories: [ETC]
-tags: [Jekyll, Plugin, Github, Pages, 호환, 문제, 제킬, 플러그인, 깃헙, 페이지, 블로그]
+tags: [Jekyll, Plugin, Github, Pages, 호환, 문제, 제킬, 플러그인, 깃헙, 페이지, 블로그, Polyglot, Jekyll-Polyglot, 다국어, 지원, Multilanguage, Support]
 ---
 
 최근 3일간 블로그에 다국어화 및 검색엔진 검색 개선을 위한 플러그인을 설치하려고 여러 가지 시도를 했었습니다.
