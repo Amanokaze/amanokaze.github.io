@@ -2,7 +2,7 @@
 layout: post
 title:  "Django Queryset에서 MySQL DB의 Group by SQL문을 표현하는 방법 "
 date:   2019-11-11
-categories: [Python]
+categories: [Django]
 tags: [Python, 파이썬, Django, Queryset, MySQL, Group, Groupby, SQL, Implementation]
 ---
 

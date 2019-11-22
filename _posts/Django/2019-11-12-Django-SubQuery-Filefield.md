@@ -2,7 +2,7 @@
 layout: post
 title:  "Django Subquery와 파일, 이미지 필드 다루기"
 date:   2019-11-12
-categories: [Python]
+categories: [Django]
 tags: [Python, 파이썬, Django, Queryset, MySQL, SubQuery, 서브쿼리, FileField, ImageField, SQL]
 ---
 
