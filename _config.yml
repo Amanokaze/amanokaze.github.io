@@ -51,7 +51,13 @@ defaults:
       related: true      
 
 plugins:
-  - jekyll-polyglot
+  - jekyll-gist
+  - jekyll-coffeescript
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
 
 languages: ['ko','en']
 default_lang: 'ko'
@@ -60,7 +66,4 @@ parallel_localization: false
 
 google_analytics: "UA-85642571-4"
 
-gems:
-  - jekyll-sitemap
-  - jekyll-polyglot
    
