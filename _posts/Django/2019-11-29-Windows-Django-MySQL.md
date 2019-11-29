@@ -24,7 +24,7 @@ MySQL을 사용하려면 서버가 있어야겠죠. 가상환경(Virtualenv)에�
 
 {% highlight Shell %}
 $ pip install mysqlclient
-{% enghighlight %}
+{% endhighlight %}
 
 Linux에서는 apt 패키지 관리자 등을 통해서(아마 다른 리눅스에서는 yum을 사용하겠지만) libmysqlclient-dev 를 설치해야하만 mysqlclient가 설치가 됩니다. 
 하지만 Windows에서는 별 문제없이 설치가 잘 됩니다. 그렇다면 mysqlclient가 과연 올바르게 작동을 할까요?
