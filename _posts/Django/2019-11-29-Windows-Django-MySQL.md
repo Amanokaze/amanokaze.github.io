@@ -68,7 +68,7 @@ Django Python Shell에서 테스트도 해 보겠습니다.
 >>> from collection.models import *
 >>> a = Test.objects.all()
 >>> print(a)
-<QuerySet [<Test: game (game)>]>
+&lt;QuerySet [&lt;Test: game (game)>]>
 >>> 
 {% endhighlight %}
 
