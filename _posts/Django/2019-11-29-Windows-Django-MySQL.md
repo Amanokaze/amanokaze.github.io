@@ -64,7 +64,7 @@ class Test(models.Model):
 
 Django Python Shell에서 테스트도 해 보겠습니다.
 
-{% highlight %}
+{% highlight Python %}
 >>> from collection.models import *
 >>> a = Test.objects.all()
 >>> print(a)
