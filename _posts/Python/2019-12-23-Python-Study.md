@@ -39,7 +39,7 @@ Numpy는 Python에서 숫자를 가지고 다루는 모든 데이터를 처리�
 여기서부터 이제 분야가 나누어질 수 있습니다. Python으로 다루는 분야는 매우 넓기 때문이지요.
 
 * 머신러닝, 딥러닝을 다룬다면
-    + Pandas, Tenserflow, Pytorch, Keras 등
+    + Pandas, Tensorflow, Pytorch, Keras 등
 * 웹 크롤링 등을 다룬다면
     + Requests, Beautifulsoup 등
 * 웹 애플리케이션 프레임워크를 다룬다면
