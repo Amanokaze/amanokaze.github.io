@@ -80,7 +80,7 @@ $ pip install --upgrade pip
 $ pip install setuptools --upgrade
 $ pip install wheel
 $ pip install "numpy<1.17"
-{% enghighlight %}
+{% endhighlight %}
 
 pip, setuptools 업그레이드, wheel은 Tensorflow 설치 시 필요한 패키지입니다. 이 작업을 미리 해 주지 않으면 Tensorflow 설치 시 에러나 경고 메시지가 나타납니다. 
 
@@ -124,7 +124,7 @@ Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-dataset
 ...               loss='sparse_categorical_crossentropy',
 ...               metrics=['accuracy'])
 >>> model.fit(x_train, y_train, epochs=5)
-2019-12-26 15:19:50.934053: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 376320000 exceeds 10_ of system memory.
+2019-12-26 15:19:50.934053: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 376320000 exceeds 10% of system memory.
 Train on 60000 samples
 Epoch 1/5
 60000/60000 [==============================] - 4s 71us/sample - loss: 0.2961 - accuracy: 0.9136
