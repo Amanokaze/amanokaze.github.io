@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ubuntu 18.04에서 Tensorflow 설치하기(Using WSL)"
+title:  "Ubuntu 18.04에서 Tensorflow 2.0 설치하기(Using WSL)"
 date:   2019-12-26
 image: '/assets/img/img015_01.png'
 categories: [ML]
@@ -94,3 +94,56 @@ numpy 다운그레이드는 Tensorflow 설치에 큰 영향은 없습니다. 하
 {% highlight Shell %}
 pip install tensorflow
 {% endhighlight %}
+
+이제 설치가 다 되었습니다.
+참고로 제 작업 PC는 Intel 그래픽카드이므로 Nvidia 관련 추가 패키지는 설치하지 않을 예정이며, tensorflow-gpu 역시 설치하지 않겠습니다.
+
+이렇게 해서 실행하면 정상적으로 실행되는 것을 확인할 수 있습니다.
+
+{% highlight Python %}
+>>> from __future__ import absolute_import, division, print_function, unicode_literals
+>>> import tensorflow as tf
+>>> mnist = tf.keras.datasets.mnist
+>>> 
+>>> (x_train, y_train), (x_test, y_test) = mnist.load_data()
+Downloading data from https://storage.googleapis.com/tensorflow/tf-keras-datasets/mnist.npz
+11493376/11490434 [==============================] - 2s 0us/step
+>>> x_train, x_test = x_train / 255.0, x_test / 255.0
+>>> model = tf.keras.models.Sequential([
+...   tf.keras.layers.Flatten(input_shape=(28, 28)),
+...   tf.keras.layers.Dense(128, activation='relu'),
+...   tf.keras.layers.Dropout(0.2),
+...   tf.keras.layers.Dense(10, activation='softmax')
+... ])
+2019-12-26 15:19:35.337947: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-26 15:19:35.385962: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 1800000000 Hz
+2019-12-26 15:19:35.389265: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x43af420 executing computations on platform Host. Devices:
+2019-12-26 15:19:35.389784: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+>>> 
+>>> model.compile(optimizer='adam',
+...               loss='sparse_categorical_crossentropy',
+...               metrics=['accuracy'])
+>>> model.fit(x_train, y_train, epochs=5)
+2019-12-26 15:19:50.934053: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 376320000 exceeds 10_ of system memory.
+Train on 60000 samples
+Epoch 1/5
+60000/60000 [==============================] - 4s 71us/sample - loss: 0.2961 - accuracy: 0.9136
+Epoch 2/5
+60000/60000 [==============================] - 4s 59us/sample - loss: 0.1437 - accuracy: 0.9574
+Epoch 3/5
+60000/60000 [==============================] - 3s 57us/sample - loss: 0.1073 - accuracy: 0.9678
+Epoch 4/5
+60000/60000 [==============================] - 4s 60us/sample - loss: 0.0904 - accuracy: 0.9723
+Epoch 5/5
+60000/60000 [==============================] - 3s 57us/sample - loss: 0.0757 - accuracy: 0.9769
+<tensorflow.python.keras.callbacks.History object at 0x7f5c0f13dcf8>
+>>> 
+>>> model.evaluate(x_test,  y_test, verbose=2)
+10000/1 - 0s - loss: 0.0392 - accuracy: 0.9757
+[0.07566572077660821, 0.9757]
+>>> 
+{% endhighlight %}
+
+하지만 학습서나 관련된 자료 보면 대부분이 Tensorflow 1.x 버전 자료가 많은 관계로, 가상환경 하나를 더 생성해서 Tensorflow 1.15 버전도 설치해서 해 봐야 할 것 같습니다. 
+
+이상 글 마치겠습니다.
