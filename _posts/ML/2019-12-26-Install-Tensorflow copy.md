@@ -2,7 +2,6 @@
 layout: post
 title:  "Ubuntu 18.04에서 Tensorflow 2.0 설치하기(Using WSL)"
 date:   2019-12-26
-image: '/assets/img/img015_01.png'
 categories: [ML]
 tags: [Python, 파이썬, ATensorflow, 텐서플로우, 설치, Installation, install, 텐서플로]
 ---
