@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "머신러닝 / 딥러닝 소개 및 기본 이론"
-date:   2019-12-26
+date:   2020-01-31
 image: '/assets/img/img018_02.png'
 categories: [ML]
 tags: [ML, DL, Deep, Learning, 딥러닝, Theory, 이론, 소개, Introduce, 머신러닝]
