@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NumPy 배열 형태"
-date:   2020-01-31
+date:   2020-02-04
 categories: [Python]
 tags: [Python, 파이썬, NumPy, 넘파이, 모듈, 연산, numpy, 기본, 형태, shape, copy, indexing, slicing, 인덱싱, 슬라이싱, 복사, 형태, reshape, 재구성, Fundamental]
 ---
