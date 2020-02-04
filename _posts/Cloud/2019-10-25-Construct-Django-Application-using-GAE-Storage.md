@@ -2,7 +2,7 @@
 layout: post
 title:  "Google App Engine / Storage를 사용한 Django 웹 애플리케이션 구축"
 date:   2019-10-25
-image: 'assets/img/img013_01.png'
+image: 'img013_01.png'
 categories: [Cloud]
 tags: [Python, 파이썬, Python37, Google, Cloud, Django, 장고, 구글, 클라우드, GAE, App, Engine, Storage, 스토리지, 앱, 엔진]
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "VS Code를 사용하여 Google Compute Engine에 연결하기"
 date:   2019-10-26
-image: 'assets/img/img014_01.png'
+image: 'img014_01.png'
 categories: [Cloud]
 tags: [Google, Cloud, SDK, 구글, 클라우드, VS, Visual, Studio, Code, 비주얼, 스튜디오, 코드, GCE, Compute, Engine, VM, Instance, 인스턴스, 연결, 접속]
 ---

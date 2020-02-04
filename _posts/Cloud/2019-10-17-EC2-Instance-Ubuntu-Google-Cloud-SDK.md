@@ -2,7 +2,7 @@
 layout: post
 title:  "EC2 인스턴스(Ubuntu)에서 Google Cloud SDK 설치하기"
 date:   2019-10-17
-image: 'assets/img/img008_01.png'
+image: 'img008_01.png'
 categories: [Cloud]
 tags: [Python, 파이썬, AWS, Amazon, 아마존, EC2, Instance, 인스턴스, Ubuntu, 우분투, Google, Cloud, SDK, 구글, 클라우드]
 ---
