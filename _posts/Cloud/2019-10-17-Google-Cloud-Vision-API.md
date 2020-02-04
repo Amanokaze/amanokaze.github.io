@@ -2,7 +2,7 @@
 layout: post
 title:  "Google Cloud Vision API 사용 예제"
 date:   2019-10-17
-image: '/assets/img/img009_01.png'
+image: 'assets/img/img009_01.png'
 categories: [Cloud]
 tags: [Python, 파이썬, AWS, Amazon, 아마존, EC2, Instance, 인스턴스, Vision, API, 비전, Ubuntu, 우분투, Google, Cloud, SDK, 구글, 클라우드]
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyll-Polyglot 다국어 지원 & Github Pages 호환 문제"
 date:   2019-11-22
-image: '/assets/img/img016_01.png'
+image: 'assets/img/img016_01.png'
 categories: [ETC]
 tags: [Jekyll, Plugin, Github, Pages, 호환, 문제, 제킬, 플러그인, 깃헙, 페이지, 블로그, Polyglot, Jekyll-Polyglot, 다국어, 지원, Multilanguage, Support]
 ---

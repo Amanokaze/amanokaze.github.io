@@ -2,7 +2,7 @@
 layout: post
 title:  "Windows 운영체제에서 Django와 MySQL 연동"
 date:   2019-11-29
-image: '/assets/img/img017_02.png'
+image: 'assets/img/img017_02.png'
 categories: [Django]
 tags: [Python, 파이썬, Django, MySQL, 장고, Windows, 운영체제, 연동]
 ---

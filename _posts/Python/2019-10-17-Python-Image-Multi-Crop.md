@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "이미지 일괄 자르기(Crop)"
-image: '/assets/img/img007_01.png'
+image: 'assets/img/img007_01.png'
 date:   2019-10-17
 categories: [Python]
 tags: [Python, 파이썬, Image, 이미지, Crop, 크롭, 일괄, Multi]
