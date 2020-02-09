@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "딥러닝 신경망 - (1) 딥러닝 프로세스 구현"
-date:   2020-02-08
+date:   2020-02-09
 image: 'img019_01.png'
 categories: [ML]
 tags: [ML, DL, Deep, Learning, 딥러닝, 머신러닝, 프로세스, Process, 케라스, 신경망, Keras, Neuron, Network, MNIST, Model, 모델]
