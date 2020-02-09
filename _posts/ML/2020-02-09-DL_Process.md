@@ -41,7 +41,7 @@ from keras import models, layers
 
 network = models.Sequential()
 network.add(layers.Dense(512, activation='relu', input_shape=(28*28,)))
-network.add(layers.Dense(10, activation='softmax')
+network.add(layers.Dense(10, activation='softmax'))
 {% endhighlight %}
 
 이거를 진짜 아무것도 모르는 사람들을 위한 기준으로 한번 써보면 이 정도입니다. 깊게 안들어갑니다.
