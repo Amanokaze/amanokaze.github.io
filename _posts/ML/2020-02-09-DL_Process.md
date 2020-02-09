@@ -75,6 +75,8 @@ MNIST 모델의 train_images, train_labels, test_images, test_labels 변수는 �
 
 그리하여 어찌저찌 크기 변경까지 다 끝났으면, 이제 위에서 말한 실제 연결하는 명령어를 써 보겠습니다.
 
+※ 주의사항: 이 책의 본문에 있는 코드를 실행한다고 그대로 나오는 것 아닙니다. 어찌저찌 크기 변경하는 명령어도 있는데 본문에 생략한 것이니 참고바랍니다.
+
 {% highlight Python %}
 network.fit(train_images, train_labels, epochs=5, batch_size=128)
 {% endhighlight %}
