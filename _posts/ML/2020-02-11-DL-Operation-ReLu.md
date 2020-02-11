@@ -105,6 +105,7 @@ output = relu(dot(W, input) + b)
 은닉 유닛이란 쉽게 말하면 입력과 출력 사이에 계산을 할 때 사용되는 유닛을 뜻합니다.
 
 ![relu hidden unit]({{ '/assets/img/img021_02.png' | prepend: site.baseurl }})
+
 ※ 출처: [aikorea.org](http://aikorea.org/cs231n/neural-networks-1/) - <cs231n.github.io>
 
 위 사진을 기준으로 한다면 Hidden layer가 은닉 유닛이 되며, 차원이 많을 수록 연산도 그만큼 많이 해서 더욱 자세하게 계산되겠죠.
@@ -153,6 +154,7 @@ relu 함수는 위에서 언급했다시피 0보다 작을 때 0으로 설정하
 이제 점곱에 대해서 설명하겠습니다. 점곱은 간단히 행렬 간의 연산을 나타냅니다.
 
 ![dot operation]({{ '/assets/img/img021_03.png' | prepend: site.baseurl }})
+
 ※ 출처: 상기 언급한 참고서적
 
 좌측 하단 x.shape는 (28*28,n)개가 됩니다. 여기서 n개는 몇 개인지는 모르지만, 한 번의 점곱을 수행할 때 28*28=784개의 이미지 픽셀 데이터가 입력된다는 것을 의미합니다.
