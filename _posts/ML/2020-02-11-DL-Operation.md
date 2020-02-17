@@ -101,7 +101,7 @@ train_labels = to_categorical(train_labels)
 network.fit(train_images, train_labels, epochs=5, batch_size=128)
 {% endhighlight %}
 
-train_images, train_labels와 관련된 코드는 모데렝 입력할 수 있는 크기로 재배치하고, 0~1 사이의 값으로 나타내기 위한 정규화 과정입니다.
+train_images, train_labels와 관련된 코드는 모델에 입력할 수 있는 크기로 재배치하고, 0~1 사이의 값으로 나타내기 위한 정규화 과정입니다.
 딥러닝에서는 이러한 것을 전처리라고 합니다.
 
 이제 network.fit()을 수행하여 모델에 훈련 데이터를 입력하는 순서로 진행됩니다. 
