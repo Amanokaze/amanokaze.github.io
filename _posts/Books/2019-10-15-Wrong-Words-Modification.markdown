@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "오타 수정 예정 안내"
-date:   2019-11-18
+date:   2020-02-17
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
@@ -72,6 +72,7 @@ create table `boards` (
 <ul>
 	<li>243P: views.py의 7Line - template_file → template_name</li>
 	<li>245P: testapp/templates/boardsfunctionview.html → testapp/templates/boards_list_fbv.html</li>
+	<li>287P: 상단 예제 코드에 DB Engine의 NAME 부분이 'awsdjangoprojdb'로 되어 있는데 'awsdjangodb'가 맞습니다. 정정하겠습니다.</li>
 	<li>295P: board_images 테이블은 존재하지 않는 테이블입니다. 집필 중간 과정에서 생성했다가 빼기로 한 테이블인데 해당 부분 내용이 남아있었던 점 양해 바랍니다. 코드는 아래와 같이 수정되니 참고 바라며, 첨부 이미지는 빼도록 하겠습니다.<br>그리고 이와 관련하여 추가로 입력할 내용이 있습니다. 이 부분은 <a href="https://amanokaze.github.io/blog/Customize-Model-Field/">다음 게시물</a>에서 다루겠습니다.</li>
 </ul>
 
