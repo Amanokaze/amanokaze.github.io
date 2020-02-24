@@ -27,6 +27,7 @@ $ virtualenv --verision
 	<li>169P: set variables → show variables</li>
 	<li>181P: 테이블 선언 부분의 컬럼명을 감싸는 기호가 Grave(`) 기호를 사용해야 하는데 Apostrophe(') 기호가 들어갔습니다. 이 부분 주의 바라겠습니다.</li>
 	<li>181P: boards 테이블 생성에서 이름 표기가 잘못된 부분도 같이 확인했습니다. 수정된 부분은 'category_id'와 'user_id' 위치를 바꾸었으며, 다음과 같이 수정하겠습니다.</li>
+	<li>182P: boards 테이블에 값을 입력하는 부분과 auth_user 테이블에 값을 입력하는 부분이 있는데, 두 부분 위치를 바꾸겠습니다.</li>
 </ul>
 
 {% highlight SQL %}
