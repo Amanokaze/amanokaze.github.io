@@ -48,6 +48,27 @@ create table `boards` (
 {% endhighlight %}
 
 <ul>
+	<li>197P: 가운데 views.py 코드에서 5번째 줄을 다음과 같이 수정합니다.</li>
+</ul>
+{% highlight Python %}
+05: 	return render(request, 'boardsview.html', {'board': boardList})
+{% endhighlight %}
+<ul>	
+	<li>205P: 하단 예제 파일명 test_proj/urls.py -> test_proj/settings.py로 변경합니다.</li>
+	<li>216P: 맨 아래에 있는 코드를 다음과 같이 변경합니다.</li>
+</ul>
+{% highlight HTML %}
+<a href="{% url 'fbv' %}">FBV List Link</a>
+{% endhighlight %}
+<ul>
+	<li>219P: default_if_none의 표현방법을 아래와 같이 변경합니다.</li>
+</ul>
+{% highlight HTML %}
+{{ value|default_if_none:"empty" }}
+{% endhighlight %}
+<ul>
+	<li>220P: dicsort를 dictsort로 모두 변경하고, dicsortreversed를 dictsortreversed로 변경합니다.</li>
+	<li>227P: [표 12-1]로 기재된 것을 [표 13-1]로 변경합니다.</li>
 	<li>241P: AuthUser 모델 클래스의 필드에서 사용자 정의 필드가 있는 것이 확인되었습니다. 사용자 정의 필드는 PART 3에서 추가되지만, PART 2에서는 추가가 안 된 상태로 그대로 표시하는 것이 맞으므로 해당 부분을 삭제해서 다음과 같이 나타내겠습니다.</li>
 </ul>
 
