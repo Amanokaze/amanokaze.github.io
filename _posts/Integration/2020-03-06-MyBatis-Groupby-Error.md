@@ -53,32 +53,32 @@ MyBatis에서 XML로 SQL Query를 작성하다가 Group by에서 에러가 발�
     select
     <choose>
     <when test="flag == 'ww'">
-    trunc(jdoh.time_stamp, 'ww')
+    trunc(time_stamp, 'ww')
     </when>
     <when test="flag == 'mm'">
-    trunc(jdoh.time_stamp, 'mm')
+    trunc(time_stamp, 'mm')
     </when>
     <when test="flag == 'yy'">
-    trunc(jdoh.time_stamp, 'yy')
+    trunc(time_stamp, 'yy')
     </when>
     <otherwise>
-    trunc(jdoh.time_stamp, 'dd')
+    trunc(time_stamp, 'dd')
     </otherwise>
     </choose>
     time stamp
     <![CDATA[from sample_table]]>
     <choose>
     <when test="flag == 'ww'">
-    group by trunc(jdoh.time_stamp, 'ww')
+    group by trunc(time_stamp, 'ww')
     </when>
     <when test="flag == 'mm'">
-    group by trunc(jdoh.time_stamp, 'mm')
+    group by trunc(time_stamp, 'mm')
     </when>
     <when test="flag == 'yy'">
-    group by trunc(jdoh.time_stamp, 'yy')
+    group by trunc(time_stamp, 'yy')
     </when>
     <otherwise>
-    group by trunc(jdoh.time_stamp, 'dd')
+    group by trunc(time_stamp, 'dd')
     </otherwise>
     </choose>
 </select>
