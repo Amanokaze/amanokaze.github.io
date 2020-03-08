@@ -51,14 +51,14 @@ create table `boards` (
 	<li>197P: 가운데 views.py 코드에서 5번째 줄을 다음과 같이 수정합니다.</li>
 </ul>
 ```Python
-05: 	return render(request, 'boardsview.html', {'board': boardList})
+05: 	return render(request, 'boardsview.html', \{ 'board': boardList \})
 ```
 <ul>	
 	<li>205P: 하단 예제 파일명 test_proj/urls.py -> test_proj/settings.py로 변경합니다.</li>
 	<li>216P: 맨 아래에 있는 코드를 다음과 같이 변경합니다.</li>
 </ul>
 ```HTML
-<a href="{% url 'fbv' %}">FBV List Link</a>
+<a href="\{% url 'fbv' %\}">FBV List Link</a>
 ```
 <ul>
 	<li>219P: default_if_none의 표현방법을 아래와 같이 변경합니다.</li>
