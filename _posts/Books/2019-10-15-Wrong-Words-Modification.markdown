@@ -57,9 +57,7 @@ create table `boards` (
 	<li>205P: 하단 예제 파일명 test_proj/urls.py -> test_proj/settings.py로 변경합니다.</li>
 	<li>216P: 맨 아래에 있는 코드를 다음과 같이 변경합니다.</li>
 </ul>
-{% highlight HTML %}
-<a href="\{% url 'fbv' %\}">FBV List Link</a>
-{% endhighlight %}
+
 <ul>
 	<li>219P: default_if_none의 표현방법을 아래와 같이 변경합니다.</li>
 </ul>
