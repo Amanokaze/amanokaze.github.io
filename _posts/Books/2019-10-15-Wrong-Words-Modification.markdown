@@ -7,6 +7,7 @@ tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애
 ---
 
 #### ※ 최근 수정일: 2020-03-09
+#### 일부 코드는 highlight를 그대로 적용하면 문법 충돌로 오류가 발생하므로 Github Gist에서 코드를 가져오니 참고바랍니다.
 
 서적 1판1쇄에서 현재까지 나타난 오타 안내입니다.
 
@@ -55,15 +56,11 @@ create table `boards` (
 	<li>205P: 하단 예제 파일명 test_proj/urls.py -> test_proj/settings.py로 변경합니다.</li>
 	<li>216P: 맨 아래에 있는 코드를 다음과 같이 변경합니다.</li>
 </ul>
-{% highlight HTML %}
-<a href="{ % url 'fbv' %}">FBV List Link</a>
-{% endhighlight %}
+<script src="https://gist.github.com/Amanokaze/17001bb97c1a05adb3e67d09f6417afe.js"></script>
 <ul>
 	<li>219P: default_if_none의 표현방법을 아래와 같이 변경합니다.</li>
 </ul>
-{% highlight HTML %}
-{ { value|default_if_none:"empty" } }
-{% endhighlight %}
+<script src="https://gist.github.com/Amanokaze/d0d9b429133db553285334f28a7ea90e.js"></script>
 <ul>
 	<li>220P: dicsort를 dictsort로 모두 변경하고, dicsortreversed를 dictsortreversed로 변경합니다.</li>
 	<li>227P: [표 12-1]로 기재된 것을 [표 13-1]로 변경합니다.</li>
