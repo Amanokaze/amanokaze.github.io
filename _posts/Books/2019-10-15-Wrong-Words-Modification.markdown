@@ -1,13 +1,14 @@
 ---
 layout: post
 title:  "오타 수정 예정 안내"
-date:   2020-02-17
+date:   2020-03-25
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
 
-#### ※ 최근 수정일: 2020-03-09
+#### ※ 최근 수정일: 2020-03-25
 #### 일부 코드는 highlight를 그대로 적용하면 문법 충돌로 오류가 발생하므로 Github Gist에서 코드를 가져오니 참고바랍니다.
+#### 생각보다 오타가 정말 많네요. 사실 책을 집필하는 과정에서 예제 프로그램을 급하게 작성하다 보니까 일부 수정된 내용을 책에 미반영된 사항이 있어서 그런 것이니 양해 바라며, 더욱 많은 사랑 바라겠습니다. 감사합니다.
 
 서적 1판1쇄에서 현재까지 나타난 오타 안내입니다.
 
@@ -64,6 +65,11 @@ create table `boards` (
 <ul>
 	<li>220P: dicsort를 dictsort로 모두 변경하고, dicsortreversed를 dictsortreversed로 변경합니다.</li>
 	<li>227P: [표 12-1]로 기재된 것을 [표 13-1]로 변경합니다.</li>
+	<li>236P: difference() 항목에서 결과는 "John's diary", "Emma's novel"로 수정합니다.</li>
+	<li>239P: exists() 항목 예제 자체는 문제가 없으나, 아래와 같이 수정하는 것이 조금 더 바람직 할 것으로 생각되어 아래와 같이 수정합니다.</li>
+</ul>
+<script src="https://gist.github.com/Amanokaze/13e1f8665ccc865c5b85ed61f3e8d8b0.js"></script>
+<ul>
 	<li>241P: AuthUser 모델 클래스의 필드에서 사용자 정의 필드가 있는 것이 확인되었습니다. 사용자 정의 필드는 PART 3에서 추가되지만, PART 2에서는 추가가 안 된 상태로 그대로 표시하는 것이 맞으므로 해당 부분을 삭제해서 다음과 같이 나타내겠습니다.</li>
 </ul>
 
@@ -89,6 +95,7 @@ create table `boards` (
 	<li>243P: views.py의 7Line - template_file → template_name</li>
 	<li>245P: testapp/templates/boardsfunctionview.html → testapp/templates/boards_list_fbv.html</li>
 	<li>287P: 상단 예제 코드에 DB Engine의 NAME 부분이 'awsdjangoprojdb'로 되어 있는데 'awsdjangodb'가 맞습니다. 정정하겠습니다.</li>
+	<li>294P: create_user() 메소드의 phone_number를 phone으로 수정합니다.</li>
 	<li>295P: board_images 테이블은 존재하지 않는 테이블입니다. 집필 중간 과정에서 생성했다가 빼기로 한 테이블인데 해당 부분 내용이 남아있었던 점 양해 바랍니다. 코드는 아래와 같이 수정되니 참고 바라며, 첨부 이미지는 빼도록 하겠습니다.<br>그리고 이와 관련하여 추가로 입력할 내용이 있습니다. 이 부분은 <a href="https://amanokaze.github.io/blog/Customize-Model-Field/">다음 게시물</a>에서 다루겠습니다.</li>
 </ul>
 
@@ -97,10 +104,32 @@ create table `boards` (
 {% endhighlight %}
 
 <ul>
+	<li>307P: 8~9Line 부분에서 'boardapp/assets/css/'를 'boardapp/assets/js'로 수정합니다.</li>
 	<li>316P: 위쪽 코드의 5Line 부분의 id="email_id" id="email_id"로 중복으로 들어갔습니다. 하나를 빼겠습니다. Github 소스코드도 확인결과 중복으로 들어간 것으로 확인되어 수정하였으니 참고 바랍니다.</li>
+	<li>320P: 319P에서는 회원가입 취소 시 'cancelUserRegister()'로 입력되어 있는데 책에는 'cancelMemberRegister()'로 명시되어 있습니다. 맥락을 맞추기 위해서 'cancelUserRegister()'로 정정합니다. Github 코드에도 cancelUserRegister()로 되어 있는 부분 확인했습니다.</li>
+	<li>324P: 맨 위의 user_register.js를 user.js로 정정, request.POST['id']를 request.POST['username']으로 정정, user_id를 username으로 정정</li>
 	<li>327P: 코드의 1 Line에 request → redirect로 정정</li>
 	<li>332P: 코드의 41 Line에 </h5>로 끝나는 태그가 있습니다만, </h4>로 변경해야 합니다. Github Source Code에도 똑같이 변경사항 반영했습니다.</li>
 	<li>341P: boardapp/static/boardapp/assets/suser.js → user.js 로 파일명 변경합니다. 단순 오타입니다.</li>
+	<li>348P: 게시물 조회 수 및 추천 수 → 게시물 댓글 및 추천 수</li>
+	<li>356P: '이전' 부분 글씨체가 다르게 나타났습니다. 이건 출판사쪽에 문의해서 정정요구 하겠습니다.</li>
+	<li>360P: 98Line의 article.id 바로 오른쪽에 중괄호 닫기 부분이 띄워쓰기가 되어 있지 않습니다. 코드 상 문제는 없으나 정정하겠습니다.</li>
+	<li>360P: 실제 코드와 상이한 부분이 있어서 아래와 같이 수정합니다. 교재 상 88Line과 98Line이 빠져있습니다. Github 코드에는 이미 적용되어 있으므로 수정사항 없습니다.</li>
+</ul>
+<script src="https://gist.github.com/Amanokaze/5b83e343b9feadf6c24e96275968b19d.js"></script>
+<ul>
+	<li>364P: 아래 코드의 3Line을 다음과 같이 변경합니다. Github 코드에도 똑같이 변경 반영했습니다.</li>
+</ul>
+<script src="https://gist.github.com/Amanokaze/7b351ab310986d379358c63b961dc61c.js"></script>
+<ul>
+	<li>385, 386P: 소스코드를 전면 수정합니다. Github의 코드와 동일하게 구현해야 하므로 아래와 같이 정정하겠습니다.</li>
+</ul>
+<script src="https://gist.github.com/Amanokaze/0cb85f3e1203aef993bd363206e254aa.js"></script>
+<ul>
+	<li>386, 387P: 소스코드를 전면 수정합니다. Github의 코드와 동일하게 구현해야 하므로 아래와 같이 정정하겠습니다.</li>
+</ul>
+<script src="https://gist.github.com/Amanokaze/5c4253e38224612ce437a854e6c99183.js"></script>
+<ul>
 	<li>409, 410P: 소스코드 부분의 board_comm_list.html → board_comm_view.html로 정정합니다.</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 </ul>
