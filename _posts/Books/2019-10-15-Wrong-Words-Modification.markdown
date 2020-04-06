@@ -130,6 +130,22 @@ create table `boards` (
 </ul>
 <script src="https://gist.github.com/Amanokaze/5c4253e38224612ce437a854e6c99183.js"></script>
 <ul>
-	<li>409, 410P: 소스코드 부분의 board_comm_list.html → board_comm_view.html로 정정합니다.</li>
+	<li>403P: 13Line 부분 내용을 다음과 같이 수정합니다.
+		<p><i>category 변수를 사용하여 카테고리에 대한 정보를 board_category 변수에 저장하는 부분이다. 일반 게시판 글쓰기 처리에서는 category 변수를 request.POST 변수를 사용하여 가져오나, 
+		여기에서는 파라미터 변수로 category를 가져와서 사용한다는 차이가 있으니 이에 유의한다.</i></p>
+	</li>
+	<li>403P: 위의 15 Line 코드를 아래와 같이 수정합니다. Github에 올라온 코드와 다르게 적혀서 있어서 정정하니 참고바랍니다.</li>	
+</ul>
+<script src="https://gist.github.com/Amanokaze/4078b280d20ac19172a617c76d7b1213.js"></script>
+<ul>
+	<li>405P: board_comm_list.html의 3Line 부분을 아래와 같이 조정합니다. 오타는 아니지만 article.title을 불러오는 부분이 없기 때문에 대화형 게시판의 카테고리명을 Title로 나타내는 것이 더욱 나을 것 같습니다. 이 부분은 Github 코드에도 동일하게 수정하였습니다.</li>
+</ul>
+<script src="https://gist.github.com/Amanokaze/8a80ec778840436e86385c122f40c8b2.js"></script>
+<ul>
+	<li>410P: 소스코드 부분의 board_comm_list.html → board_comm_view.html로 정정합니다.</li>
+	<li>412P, 413P: 코드 부분에 굵은 표시가 왜 나왔는 지 모르겠네요. 편집 과정에서 실수가 있었던 것 같습니다. 출판사 측에 문의해서 조정하겠습니다.</li>
+	<li>412P: 맨 아래에 board_delete_res() → board_delete_result()</li>
+	<li>418P: 출판사 편집 과정에서 오류가 있었던 것으로 추정됩니다. 12Line 부분을 한 칸 내려주시기 바랍니다.</li>
+	<li>485P: AbstractUser를 AbstractBaseUser로 수정합니다.</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 </ul>
