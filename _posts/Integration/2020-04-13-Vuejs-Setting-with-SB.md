@@ -414,7 +414,7 @@ auth.service는 AuthService라는 클래스(Class)를 생성하여 로그인 및
 하나의 독립된 서비스로 관리된다는 점에서 services 디렉토리를 생성하고 해당 디렉토리에 auth.service.js를 다음과 같이 생성하겠습니다.
 
 src/services/auth.service.js
-{5 highlight JavaScript %}
+{% highlight JavaScript %}
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8080/api/auth/';
