@@ -512,7 +512,6 @@ src/components/Login.vue
           ></b-form-input>
         </b-col>
       </b-row>
-
       <b-row>
         <b-col sm="3"><label for="password">Password:</label></b-col>
         <b-col sm="9">
@@ -679,7 +678,8 @@ src/components/Register.vue
             placeholder="Password"
           ></b-form-input>
         </b-col>
-      </b-row>      <b-row>
+      </b-row>      
+      <b-row>
         <b-col sm="3"><label for="confirm_password">Confirm Password:</label></b-col>
         <b-col sm="9">
           <b-form-input
