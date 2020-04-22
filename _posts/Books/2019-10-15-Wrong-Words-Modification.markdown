@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "오타 수정 예정 안내"
-date:   2020-04-06
+date:   2020-04-23
 categories: [Books]
 tags: [AWS, Cloud, Django, Amazon, books, 장고, 클라우드, Application, 애플리케이션, Python, 파이썬]
 ---
 
-#### ※ 최근 수정일: 2020-04-06
+#### ※ 최근 수정일: 2020-04-23
 #### 일부 코드는 highlight를 그대로 적용하면 문법 충돌로 오류가 발생하므로 Github Gist에서 코드를 가져오니 참고바랍니다.
 #### 생각보다 오타가 정말 많네요. 사실 책을 집필하는 과정에서 예제 프로그램을 급하게 작성하다 보니까 일부 수정된 내용을 책에 미반영된 사항이 있어서 그런 것이니 양해 바라며, 더욱 많은 사랑 바라겠습니다. 감사합니다.
 
@@ -148,4 +148,5 @@ create table `boards` (
 	<li>418P: 출판사 편집 과정에서 오류가 있었던 것으로 추정됩니다. 12Line 부분을 한 칸 내려주시기 바랍니다.</li>
 	<li>485P: AbstractUser를 AbstractBaseUser로 수정합니다.</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
+	<li>505P: awsdjango → awsdjangoproj 경로표시 오타 수정</li>
 </ul>
