@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Spring Security를 사용한 로그인 인증"
-date:   2020-04-13
-image: 'img023_01.png'
+date:   2020-05-27
+image: 'img024_01.PNG'
 categories: [Integration]
 tags: [spring,boot,postgresql,setting,develoment,environment,authentication,인증,security,보안,스프링,부트,뷰,세팅,개발,환경,개발환경]
 ---
@@ -63,7 +63,7 @@ tags: [spring,boot,postgresql,setting,develoment,environment,authentication,인�
 Spring Security(이하 Security)를 pom.xml에서 추가하게 되면 웹페이지에 접근할 때 Security를 제일 먼저 거치는 동작을 수행합니다.
 그래서 Security만 설치하고 아무것도 없는 웹 애플리케이션을 실행하면 로그인 페이지가 나타날 것이고요.
 
-![Security Login]({{ '/assets/img/img024_01.png' | prepend: site.baseurl }})
+![Security Login]({{ '/assets/img/img024_01.PNG' | prepend: site.baseurl }})
 
 물론 우리는 저 페이지를 그대로 사용하지는 않습니다. 그렇기 때문에 Security에서 환경 설정을 해야 되겠죠.
 
@@ -178,7 +178,7 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 
 				UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-						userDetails, null, userDetails.getAuthorities());
+					userDetails, null, userDetails.getAuthorities());
 				authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
 				SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -322,15 +322,15 @@ public class UserDetailsImpl implements UserDetails {
 
 	public static UserDetailsImpl build(User user) {
 		List<GrantedAuthority> authorities = user.getRoles().stream()
-				.map(role -> new SimpleGrantedAuthority(role.getName().name()))
-				.collect(Collectors.toList());
+			.map(role -> new SimpleGrantedAuthority(role.getName().name()))
+			.collect(Collectors.toList());
 
 		return new UserDetailsImpl(
-				user.getId(), 
-				user.getUsername(), 
-				user.getEmail(),
-				user.getPassword(), 
-				authorities);
+			user.getId(), 
+			user.getUsername(), 
+			user.getEmail(),
+			user.getPassword(), 
+			authorities);
 	}
 
 	@Override
@@ -396,59 +396,59 @@ WebSecurityConfig의 configure()에서 이미 설정되어 있기 때문에 그�
 
 {% highlight Java %}
 @PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-			return ResponseEntity
-					.badRequest()
-					.body(new MessageResponse("Error: Username is already taken!"));
-		}
+public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+  if (userRepository.existsByUsername(signUpRequest.getUsername())) {
+    return ResponseEntity
+    .badRequest()
+    .body(new MessageResponse("Error: Username is already taken!"));
+  }
 
-		if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-			return ResponseEntity
-					.badRequest()
-					.body(new MessageResponse("Error: Email is already in use!"));
-		}
+  if (userRepository.existsByEmail(signUpRequest.getEmail())) {
+    return ResponseEntity
+    .badRequest()
+    .body(new MessageResponse("Error: Email is already in use!"));
+}
 
-		// Create new user's account
-		User user = new User(signUpRequest.getUsername(), 
-							 signUpRequest.getEmail(),
-							 encoder.encode(signUpRequest.getPassword()));
+  // Create new user's account
+  User user = new User(signUpRequest.getUsername(), 
+      signUpRequest.getEmail(),
+      encoder.encode(signUpRequest.getPassword()));
 
-		Set<String> strRoles = signUpRequest.getRole();
-		Set<Role> roles = new HashSet<>();
+  Set<String> strRoles = signUpRequest.getRole();
+  Set<Role> roles = new HashSet<>();
 
-		if (strRoles == null) {
-			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-			roles.add(userRole);
-		} else {
-			strRoles.forEach(role -> {
-				switch (role) {
-				case "admin":
-					Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(adminRole);
+  if (strRoles == null) {
+    Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+        .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+    roles.add(userRole);
+  } else {
+    strRoles.forEach(role -> {
+      switch (role) {
+      case "admin":
+        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+          .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+        roles.add(adminRole);
 
-					break;
-				case "mod":
-					Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(modRole);
+        break;
+      case "mod":
+        Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
+          .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+        roles.add(modRole);
 
-					break;
-				default:
-					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(userRole);
-				}
-			});
-		}
+        break;
+      default:
+        Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+          .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+        roles.add(userRole);
+      }
+    });
+  }
 
-		user.setRoles(roles);
-		userRepository.save(user);
+  user.setRoles(roles);
+  userRepository.save(user);
 
-		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-	}
+  return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+}
 {% endhighlight %}
 
 위 코드에서 제시하는 흐름은 어떻게 되느냐. 순서대로 볼까요.
@@ -477,26 +477,26 @@ WebSecurityConfig의 configure()에서 이미 설정되어 있기 때문에 그�
 로그인도 똑같이 Controller를 생성합니다. 로그인은 회원가입과는 달리 코드는 짧지만 절차가 꽤 복잡하니 순서대로 잘 보셔야 합니다.
 
 {% highlight Java %}
-	@PostMapping("/signin")
-	public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+@PostMapping("/signin")
+public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
-		Authentication authentication = authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+  Authentication authentication = authenticationManager.authenticate(
+    new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
-		SecurityContextHolder.getContext().setAuthentication(authentication);
-		String jwt = jwtUtils.generateJwtToken(authentication);
-		
-		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
-		List<String> roles = userDetails.getAuthorities().stream()
-				.map(item -> item.getAuthority())
-				.collect(Collectors.toList());
+  SecurityContextHolder.getContext().setAuthentication(authentication);
+  String jwt = jwtUtils.generateJwtToken(authentication);
+  
+  UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();		
+  List<String> roles = userDetails.getAuthorities().stream()
+    .map(item -> item.getAuthority())
+    .collect(Collectors.toList());
 
-		return ResponseEntity.ok(new JwtResponse(jwt, 
-												 userDetails.getId(), 
-												 userDetails.getUsername(), 
-												 userDetails.getEmail(), 
-												 roles));
-	}
+  return ResponseEntity.ok(new JwtResponse(jwt, 
+    userDetails.getId(), 
+    userDetails.getUsername(), 
+    userDetails.getEmail(), 
+    roles));
+}
 {% endhighlight %}
 
 먼저 로그인 컨트롤러의 첫 번째 줄에서 수행하는 동작부터 다시 보겠습니다.
