@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Vue.js의 Async - Await 사용"
-date:   2020-07-22
+date:   2020-07-21
 image: 'img025_01.png'
 categories: [Integration]
 tags: [Vue,Vue.js,Asnyc,Await,Promise,Resolve,Reject,ES6]]
