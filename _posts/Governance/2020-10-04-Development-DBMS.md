@@ -92,7 +92,7 @@ IT 업체가 아닌 곳이라도 사실 크게 상황이 다르지는 않습니�
 
 ['B2C와 다르다' B2B 마케팅에서 데이터 문제는? - CIO Korea](http://www.ciokorea.com/news/114129)
 
-![출처: CIO Korea](http://www.ciokorea.com/files/ciokr/2019/01/GettyImages-958491750.jpg)
+![출처: CIO Korea]({{ '/assets/img/img026_01.jpg' | prepend: site.baseurl }})
 
 이 글은 결국 B2B 솔루션 판매를 위한 부분이 아래에 언급되어 있지만, B2B의 한계를 명확하게 나타내 있습니다.
 
