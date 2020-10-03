@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "시스템을 구축한다면 - (1) 사전 고려 사항"
-date:   2020-08-24
+date:   2020-09-28
 categories: [Governance]
 tags: [IT,Governance,System,Develpment,Consideration,Checklist,Requirement]
 ---
