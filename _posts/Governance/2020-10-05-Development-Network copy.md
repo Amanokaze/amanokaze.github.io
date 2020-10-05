@@ -3,7 +3,7 @@ layout: post
 title:  "시스템을 구축한다면 - (3) Network, Security"
 date:   2020-10-05
 categories: [Governance]
-tags: [IT,Governance,System,Develpment,Infra,Infrastructure,DBMS,Todolist,Checklist,Requirement]
+tags: [IT,Governance,System,Develpment,Infra,Infrastructure,Network,Firewall,Security,Todolist,Checklist,Requirement]
 ---
 
 지난 글:
@@ -22,7 +22,7 @@ tags: [IT,Governance,System,Develpment,Infra,Infrastructure,DBMS,Todolist,Checkl
 + 데이터베이스 관리시스템(Database Management System: DBMS)
 + 네트워크 및 방화벽(Network and Firewall)
 + 보안(Security)
-+ 사용 모델 및 언어(Design Pattern, Front/Back-end, Programming Langauge)
++ 프레임워크, 디자인 패턴 및 언어(Framework, Design Pattern, Programming Langauge)
 + 저장소(Storage)
 + 도메인(Domain)
 + 형상관리(Configuration Management)
