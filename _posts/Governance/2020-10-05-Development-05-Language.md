@@ -12,7 +12,7 @@ tags: [IT,Governance,System,Develpment,Infra,Infrastructure,Language,Programming
 
 [시스템을 구축한다면 - (2) DBMS](2020-10-04-Development-DBMS.md)
 
-[시스템을 구축한다면 - (3) Network](2020-10-05-Development-Network.md)
+[시스템을 구축한다면 - (3) Network](2020-10-05-Development-03-Network.md)
 
 ## 0. Intro
 
