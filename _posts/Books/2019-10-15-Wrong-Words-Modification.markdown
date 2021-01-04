@@ -149,4 +149,5 @@ create table `boards` (
 	<li>485P: AbstractUser를 AbstractBaseUser로 수정합니다.</li>
 	<li>501P: # DEBUG = True → DEBUG = True (# 기호 제거)</li>
 	<li>505P: awsdjango → awsdjangoproj 경로표시 오타 수정</li>
+	<li>bordapp/templates/board_comm_view.html - form 태그 부분에 id="delete_form" 추가 필요</li>
 </ul>
